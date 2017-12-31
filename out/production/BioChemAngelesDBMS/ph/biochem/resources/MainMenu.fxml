@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.MainController">
+   <top>
+      <VBox prefHeight="78.0" prefWidth="935.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="42.0" prefWidth="795.0">
+               <children>
+                  <MenuBar prefHeight="25.0" prefWidth="1209.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="69.0" prefWidth="943.0">
+               <children>
+                  <JFXTextField layoutX="455.0" layoutY="17.0" prefHeight="25.0" prefWidth="207.0" promptText="search query" />
+                  <JFXComboBox fx:id="comboCategory" layoutX="333.0" layoutY="17.0" promptText="Search by:" />
+                  <ToolBar layoutX="800.0" layoutY="10.0" prefHeight="40.0" prefWidth="402.0">
+                    <items>
+                      <Button fx:id="btnAddPatient" mnemonicParsing="false" onAction="#addPatient" text="Add New Patient" />
+                        <Button fx:id="btnEditPatient" mnemonicParsing="false" onAction="#editPatient" text="Update Existing" />
+                        <Button fx:id="btnDeletePatient" mnemonicParsing="false" text="Delete Existing" />
+                        <Button fx:id="btnCancel" cancelButton="true" disable="true" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="74.0" text="Cancel" />
+                    </items>
+                  </ToolBar>
+                  <JFXToggleButton fx:id="toggleSearch" layoutX="154.0" layoutY="1.0" text="Apply Search Filter" />
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="28.0" prefWidth="935.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="6.0" layoutY="6.0" text="BioChem HealthCare Services | Dau Mabalacat, Pampanga | (045) 402 5809" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <right>
+      <AnchorPane prefHeight="541.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblPatient" disable="true" layoutX="54.0" layoutY="7.0" text="Patient Information">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="inputName" disable="true" layoutX="18.0" layoutY="51.0" prefHeight="25.0" prefWidth="177.0" promptText="Name*" />
+            <JFXTextField fx:id="inputAddress" disable="true" layoutX="18.0" layoutY="76.0" prefHeight="25.0" prefWidth="176.0" promptText="Home Address*" />
+            <JFXTextField fx:id="inputContactNumber" disable="true" layoutX="18.0" layoutY="101.0" prefHeight="25.0" prefWidth="178.0" promptText="Contact Number*" />
+            <JFXComboBox fx:id="comboCivilStatus" disable="true" layoutX="20.0" layoutY="133.0" prefHeight="25.0" prefWidth="177.0" promptText="Civil Status*" />
+            <Label fx:id="lblBirthday" disable="true" layoutX="8.0" layoutY="231.0" text="Birthday*" />
+            <JFXComboBox fx:id="comboBirthdayMonth" disable="true" layoutX="9.0" layoutY="247.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" />
+            <JFXComboBox fx:id="comboBirthdayDay" disable="true" layoutX="65.0" layoutY="247.0" prefHeight="25.0" prefWidth="67.0" promptText="Day" />
+            <JFXComboBox fx:id="comboBirthdayYear" disable="true" layoutX="129.0" layoutY="247.0" prefHeight="25.0" prefWidth="71.0" promptText="Year" />
+            <JFXComboBox fx:id="comboDateMonth" disable="true" layoutX="9.0" layoutY="189.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" />
+            <JFXComboBox fx:id="comboDateDay" disable="true" layoutX="65.0" layoutY="189.0" prefHeight="25.0" prefWidth="65.0" promptText="Day" />
+            <JFXComboBox fx:id="comboDateYear" disable="true" layoutX="129.0" layoutY="189.0" prefHeight="25.0" prefWidth="70.0" promptText="Year" />
+            <Label fx:id="lblDate" disable="true" layoutX="8.0" layoutY="171.0" text="Date*" />
+            <Label fx:id="lblEmployment" disable="true" layoutX="54.0" layoutY="343.0" text="Employment Record">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="inputCompanyName" disable="true" layoutX="13.0" layoutY="379.0" prefHeight="25.0" prefWidth="181.0" promptText="Company Name*" />
+            <JFXTextField fx:id="inputOccupation" disable="true" layoutX="13.0" layoutY="414.0" prefHeight="25.0" prefWidth="179.0" promptText="Occupation*" />
+            <JFXComboBox fx:id="comboEmploymentStatus" disable="true" layoutX="13.0" layoutY="451.0" prefHeight="25.0" prefWidth="179.0" promptText="Employment Status (Optional)" />
+            <JFXComboBox fx:id="comboPurpose" disable="true" layoutX="13.0" layoutY="489.0" prefHeight="25.0" prefWidth="180.0" promptText="Purpose (Optional)" />
+            <Button fx:id="btnFamilyHealthHistory" disable="true" layoutX="217.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClickBtnFamilyHistory" text="Family Health History (Optional)" />
+            <Button fx:id="btnClinicalMeasurements" disable="true" layoutX="214.0" layoutY="41.0" mnemonicParsing="false" onAction="#onClickBtnClinicalMeasurements" text="Clinical Measurements (Optional)" />
+            <Label fx:id="lblMedical" disable="true" layoutX="247.0" layoutY="8.0" text="Medical Information">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLaboratory" disable="true" layoutX="250.0" layoutY="118.0" text="Laboratory Results">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAddPatientSave" disable="true" layoutX="266.0" layoutY="500.0" mnemonicParsing="false" onAction="#insertNewPatient" prefHeight="28.0" prefWidth="86.0" text="Save Patient" />
+            <JFXRadioButton fx:id="radioGenderMale" disable="true" layoutX="4.0" layoutY="293.0" text="Male">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioButtonGender" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioGenderFemale" disable="true" layoutX="70.0" layoutY="293.0" text="Female" toggleGroup="$radioButtonGender" />
+            <Separator layoutX="9.0" prefWidth="200.0" />
+            <Separator layoutX="206.0" layoutY="1.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="206.0" layoutY="201.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="206.0" layoutY="339.0" orientation="VERTICAL" prefHeight="200.0" />
+            <Separator layoutX="11.0" layoutY="538.0" prefWidth="200.0" />
+            <Separator layoutX="9.0" layoutY="50.0" prefWidth="200.0" />
+            <Separator layoutX="9.0" layoutY="337.0" prefWidth="200.0" />
+            <Separator layoutX="9.0" layoutY="370.0" prefWidth="200.0" />
+            <JFXRadioButton fx:id="radioCorporate" disable="true" layoutX="220.0" layoutY="179.0" onAction="#onChangeCorporate" text="Corporate (CBC, UA, FA, R)">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioButtonPackages" />
+               </toggleGroup></JFXRadioButton>
+            <JFXRadioButton fx:id="radioSanitary" disable="true" layoutX="220.0" layoutY="204.0" onAction="#onChangeSanitary" text="Sanitary (UA, FA, R)" toggleGroup="$radioButtonPackages" />
+            <JFXComboBox fx:id="comboTestType" disable="true" layoutX="236.0" layoutY="301.0" onAction="#onChangeComboOtherTests" prefHeight="25.0" prefWidth="140.0" promptText="Choose test type" />
+            <Label fx:id="lblRadioGraphic" disable="true" layoutX="250.0" layoutY="343.0" text="Radiographic Results">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txtAreaChestPA" disable="true" layoutX="220.0" layoutY="382.0" prefHeight="55.0" prefWidth="171.0" promptText="Chest PA" />
+            <TextArea fx:id="txtAreaImpression" disable="true" layoutX="221.0" layoutY="443.0" prefHeight="53.0" prefWidth="169.0" promptText="Impression" />
+            <JFXRadioButton fx:id="radioPackages" disable="true" layoutX="203.0" layoutY="151.0" onAction="#packagesOnChange" text="Packages">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioButtonLabResults" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="radioIndividualTests" disable="true" layoutX="203.0" layoutY="276.0" onAction="#individualTestsOnChange" text="Individual Tests" toggleGroup="$radioButtonLabResults" />
+            <Separator layoutX="209.0" prefWidth="200.0" />
+            <Separator layoutX="207.0" layoutY="32.0" prefWidth="200.0" />
+            <Separator layoutX="209.0" layoutY="112.0" prefWidth="200.0" />
+            <Separator layoutX="207.0" layoutY="144.0" prefWidth="200.0" />
+            <Separator layoutX="207.0" layoutY="336.0" prefWidth="200.0" />
+            <Separator layoutX="203.0" layoutY="369.0" prefWidth="200.0" />
+            <Separator layoutX="207.0" layoutY="537.0" prefWidth="200.0" />
+            <JFXTextField fx:id="inputOtherTests" disable="true" layoutX="236.0" layoutY="235.0" promptText="Others" />
+            <Label fx:id="lblRequired" disable="true" layoutX="69.0" layoutY="27.0" text="* required field">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tblPatients" prefHeight="543.0" prefWidth="532.0" tableMenuButtonVisible="true" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
