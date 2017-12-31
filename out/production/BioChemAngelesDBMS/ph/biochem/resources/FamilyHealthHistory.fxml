@@ -34,7 +34,7 @@
       <JFXTextField fx:id="inputA" layoutX="612.0" layoutY="205.0" prefHeight="25.0" prefWidth="18.0" promptText="A" />
       <JFXTextField fx:id="inputL" layoutX="637.0" layoutY="205.0" prefHeight="25.0" prefWidth="18.0" promptText="L" />
       <JFXTextField fx:id="inputM" layoutX="662.0" layoutY="205.0" prefHeight="25.0" prefWidth="18.0" promptText="M" />
-      <Button fx:id="btnSave" layoutX="313.0" layoutY="277.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="87.0" text="Save">
+      <Button fx:id="btnSave" layoutX="277.0" layoutY="277.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="87.0" text="Save">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -57,5 +57,6 @@
       <Separator layoutX="307.0" layoutY="258.0" prefWidth="200.0" />
       <Separator layoutX="447.0" layoutY="258.0" prefWidth="200.0" />
       <Separator layoutX="530.0" layoutY="258.0" prefWidth="200.0" />
+      <Button fx:id="btnClose" layoutX="389.0" layoutY="278.0" mnemonicParsing="false" onAction="#onClose" prefHeight="35.0" prefWidth="87.0" text="Close" />
     </children>
 </AnchorPane>

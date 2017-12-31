@@ -58,14 +58,38 @@ public class ClinicalController extends AlertDialog{
         inputLeft.setText(DataHolder.left);
     }
 
-    private void resetValues(){
+    public void resetValues(){
         DataHolder.temperature = DataHolder.pulseRate = DataHolder.respiratoryRate = DataHolder.bloodPressure
                 = DataHolder.eyeGlasses = DataHolder.colorVision = DataHolder.right = DataHolder.left = DataHolder.bmiRemarks = "";
         DataHolder.weight = DataHolder.height = DataHolder.BMI=0;
     }
 
+    public void retainValues(){
+        DataHolder.temperature = inputTemp.getText();
+        DataHolder.pulseRate = inputPulse.getText();
+        DataHolder.respiratoryRate = inputRespiratory.getText();
+        DataHolder.bloodPressure = inputBlood.getText();
+        DataHolder.eyeGlasses = comboEye.getValue().toString();
+        DataHolder.colorVision = comboColor.getValue().toString();
+        DataHolder.right = inputRight.getText();
+        DataHolder.left = inputLeft.getText();
+        if(!displayBMIRemarks.getPromptText().isEmpty()){
+            DataHolder.bmiRemarks = displayBMIRemarks.getPromptText();
+        }
+        if(!inputWeight.getText().isEmpty()){
+            DataHolder.weight = Double.parseDouble(inputWeight.getText());
+        }
+        if(!inputHeight.getText().isEmpty()){
+            DataHolder.height = Double.parseDouble(inputHeight.getText());
+        }
+        if(!displayBMIScore.getText().isEmpty()) {
+            DataHolder.BMI = Double.parseDouble(displayBMIScore.getText());
+        }
+    }
+
     public void onClose(){
-        resetValues();
+        //resetValues();
+        retainValues();
         Stage clinicalForm = (Stage) btnClose.getScene().getWindow();
         clinicalForm.close();
     }

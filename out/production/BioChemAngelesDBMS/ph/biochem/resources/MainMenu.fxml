@@ -106,7 +106,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="btnAddPatientSave" disable="true" layoutX="266.0" layoutY="500.0" mnemonicParsing="false" onAction="#insertNewPatient" prefHeight="28.0" prefWidth="86.0" text="Save Patient" />
+            <Button fx:id="btnAddPatientSave" disable="true" layoutX="221.0" layoutY="500.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="28.0" prefWidth="86.0" text="Save Patient" />
             <JFXRadioButton fx:id="radioGenderMale" disable="true" layoutX="4.0" layoutY="293.0" text="Male">
                <toggleGroup>
                   <ToggleGroup fx:id="radioButtonGender" />
@@ -153,6 +153,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Label>
+            <Button fx:id="btnUpdateResults" disable="true" layoutX="308.0" layoutY="500.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="96.0" text="Update Results" />
          </children>
       </AnchorPane>
    </right>

@@ -89,6 +89,11 @@ public class MainController {
      */
     private ClinicalController clinicalController;
     private FamilyHealthController familyHealthController;
+    private BloodChemistryController bloodChemistryController;
+    private CBCController cbcController;
+    private FAController faController;
+    private MISCController miscController;
+    private UAController uaController;
     /**
      * END CONTROLLERS
      */
@@ -162,14 +167,21 @@ public class MainController {
         disableCancelButton(false);
         btnAddPatientSave.setDisable(false);
         userMode = 1;
+        if(clinicalController != null){
+            clinicalController.resetValues();
+        }
+        if(familyHealthController != null){
+            familyHealthController.resetValues();
+        }
     }
 
-    public void onClickBtnSave(){
+    public void onClickBtnSave() throws Exception{
         if(userMode == 1){ //add user
             insertNewPatient();
             tblPatients.requestFocus();
             tblPatients.getSelectionModel().select(patients.size()-1);
             tblPatients.getFocusModel().focus(patients.size()-1);
+            tblPatients.scrollTo(patients.size()-1);
             disableAddInputFields(true);
             disableControlButtons(false);
             btnAddPatientSave.setDisable(true);
@@ -198,9 +210,9 @@ public class MainController {
             updatedPatient.setOccupation(occupation);
 
             String updateSecondaryInfo = "UPDATE SecondaryInfo SET CivilStatus = ?, Birthday = ?, EmploymentStatus = ?, Purpose = ?," +
-                    " Temperature = ?, PulseRate = ?, RespiratoryRate = ?, BloodPressure = ?, Weight = ?, Height = ?, Score = ? " +
-                    "BMIRemarks = ?, EyeGlasses = ?, ColorVision = ?, RightEye = ?, LeftEye = ?, Hospitalizations = ?, Surgery = ? " +
-                    "PresentMedications = ?, FamilyHistoryRemarks = ?, Smoker = ?, SticksPerDay = ?, SmokerYrs = ?, AlcoholDrinker = ? " +
+                    " Temperature = ?, PulseRate = ?, RespiratoryRate = ?, BloodPressure = ?, Weight = ?, Height = ?, Score = ?, " +
+                    "BMIRemarks = ?, EyeGlasses = ?, ColorVision = ?, RightEye = ?, LeftEye = ?, Hospitalizations = ?, Surgery = ?, " +
+                    "PresentMedications = ?, FamilyHistoryRemarks = ?, Smoker = ?, SticksPerDay = ?, SmokerYrs = ?, AlcoholDrinker = ?, " +
                     "BottlesPerSession = ?, DrinkerYrs = ?, Menstruation = ?, Gravida = ?, Para = ?, TFemale = ?, PFemale = ?, AFemale = ?, " +
                     "LFemale = ?, MFemale = ? WHERE MRNID = ?";
             String birthday = isNull(comboBirthdayMonth.getValue())+"/"+isNull(comboBirthdayDay.getValue())+"/"+isNull(comboBirthdayYear.getValue());
@@ -216,14 +228,30 @@ public class MainController {
                     Integer.toString(selectedMRN)}, StatementType.UPDATE);
 
             //TODO: TESTS
+            //CBC, UA, FA, MISC, bloodChemistry
+            if(CBC){
+                cbcController = showNewScene("CBC.fxml").<CBCController>getController();
+            }
+            if(UA){
+                uaController = showNewScene("UA.fxml").<UAController>getController();
+            }
+            if(FA){
+                faController = showNewScene("FA.fxml").<FAController>getController();
+            }
+            if(MISC){
+                miscController = showNewScene("Misc.fxml").<MISCController>getController();
+            }
+            if(bloodChemistry){
+                bloodChemistryController = showNewScene("BloodChemistry.fxml").<BloodChemistryController>getController();
+            }
         }
     }
 
     private int findPatientIndex(int MRN){
-        for(Patient patient : patients){
-            int patientMRN = patient.getMRN();
+        for(int index=0; index<patients.size(); index++){
+            int patientMRN = patients.get(index).getMRN();
             if(patientMRN == MRN){
-                return patientMRN;
+                return index;
             }
         }
         return -1;
@@ -360,6 +388,7 @@ public class MainController {
         disableCancelButton(true);
         btnAddPatientSave.setDisable(true);
         tblPatients.setDisable(false);
+        disableLaboratoryResults(true);
     }
 
     public void disableAddInputFields(boolean value){
@@ -403,13 +432,13 @@ public class MainController {
     }
 
     public void onClickBtnClinicalMeasurements() throws Exception{
+        DataHolder.clinicalFormOpened = true;
         clinicalController = showNewScene("ClinicalMeasurements.fxml").<ClinicalController>getController();
-        btnClinicalMeasurements.setDisable(true);
     }
 
     public void onClickBtnFamilyHistory() throws Exception {
+        DataHolder.familyFormOpened = true;
         familyHealthController = showNewScene("FamilyHealthHistory.fxml").<FamilyHealthController>getController();
-        btnFamilyHealthHistory.setDisable(true);
     }
 
     public FXMLLoader showNewScene(String relativePath) throws Exception{
@@ -496,5 +525,22 @@ public class MainController {
         lblLaboratory.setDisable(value);
         radioPackages.setDisable(value);
         radioIndividualTests.setDisable(value);
+        comboTestType.setDisable(value);
+        radioCorporate.setDisable(value);
+        radioSanitary.setDisable(value);
+    }
+
+    public void clearInputFields(){
+        inputName.setText("");
+        inputAddress.setText("");
+        inputContactNumber.setText("");
+        comboCivilStatus.setValue("");
+        comboDateYear.setValue("");
+        comboDateDay.setValue("");
+        comboDateMonth.setValue("");
+        comboBirthdayDay.setValue("");
+        comboBirthdayMonth.setValue("");
+        comboBirthdayYear.setValue("");
+
     }
 }

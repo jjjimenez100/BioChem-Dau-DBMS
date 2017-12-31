@@ -25,7 +25,8 @@ public class FamilyHealthController extends AlertDialog{
     private Button btnSave, btnClose;
 
     public void onClose(){
-        resetValues();
+        //resetValues();
+        retainValues();
         Stage familyForm = (Stage) btnClose.getScene().getWindow();
         familyForm.close();
     }
@@ -100,9 +101,45 @@ public class FamilyHealthController extends AlertDialog{
         inputDrinkerYrs.setText(DataHolder.drinkerYrs);
     }
 
+    public void retainValues(){
+        if(comboHospitalizations.getValue() != null){
+            DataHolder.hospitalizations=comboHospitalizations.getValue().toString();
+        }
+        if(comboSurgery.getValue() != null){
+            DataHolder.surgery=comboSurgery.getValue().toString();
+        }
+        if(comboMedications.getValue() != null){
+            DataHolder.presentMed=comboMedications.getValue().toString();
+        }
+        if(comboSmoker.getValue() != null){
+            DataHolder.smoker=comboSmoker.getValue().toString();
+        }
+        if(comboDrinker.getValue() != null){
+            DataHolder.alcohol=comboDrinker.getValue().toString();
+        }
+        if(inputMensDate.getValue() != null){
+            DataHolder.mensDate=inputMensDate.getValue().toString();
+        }
+
+        DataHolder.remarks=inputRemarks.getText();
+        DataHolder.gravida=inputGravida.getText();
+        DataHolder.para=inputPara.getText();
+        DataHolder.t=inputT.getText();
+        DataHolder.p=inputP.getText();
+        DataHolder.a=inputA.getText();
+        DataHolder.l=inputL.getText();
+        DataHolder.m=inputM.getText();
+        DataHolder.sticksPerDay=inputSticksPerDay.getText();
+        DataHolder.smokerYrs=inputSmokerYrs.getText();
+        DataHolder.bottlesPerSession=inputBottlesPerSession.getText();
+        DataHolder.drinkerYrs=inputDrinkerYrs.getText();
+    }
+
     public void resetValues(){
-        hospitalizations=surgery=presentMed=remarks=smoker=alcohol=mensDate=gravida=para=t=p=a=l=m=
-                sticksPerDay=smokerYrs=bottlesPerSession=drinkerYrs="";
+        DataHolder.hospitalizations=DataHolder.surgery=DataHolder.presentMed=DataHolder.remarks=DataHolder.smoker=
+                DataHolder.alcohol=DataHolder.mensDate=DataHolder.gravida=DataHolder.para=DataHolder.t=DataHolder.p=DataHolder.a=
+                        DataHolder.l=DataHolder.m= DataHolder.sticksPerDay=DataHolder.smokerYrs=DataHolder.bottlesPerSession=
+                                DataHolder.drinkerYrs="";
     }
 
     private void initComboBoxes(){

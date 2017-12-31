@@ -21,4 +21,8 @@ public class DataHolder {
             epithelial="", mucus="", bacteria="", urates="", phosphates="", casts="", crystals="", UAOthers="", UARemarks="";
 
     public static String miscTests, miscRemarks;
+
+    public static boolean familyFormOpened = false, clinicalFormOpened = false;
+    public static boolean radioGraphicOpened = false, CBC = false, UA = false,
+            FA = false, MISC = false, bloodChemistry = false;
 }

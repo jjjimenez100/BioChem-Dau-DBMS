@@ -75,7 +75,7 @@ public class UAController {
         onClose();
     }
 
-    private void onClose(){
+    public void onClose(){
         resetValues();
         Stage UAForm = (Stage) btnClose.getScene().getWindow();
         UAForm.close();
