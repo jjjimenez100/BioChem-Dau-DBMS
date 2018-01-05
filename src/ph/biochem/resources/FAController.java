@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import ph.biochem.modules.DBHelper;
 import ph.biochem.modules.DataHolder;
+import ph.biochem.modules.StatementType;
 
 public class FAController {
     public String color, consistency, grossOther, occultBlood, pusCells, FARBC, microscopicOther, FARemarks;
@@ -48,6 +50,10 @@ public class FAController {
         FARBC = inputRBC.getText();
         microscopicOther = inputMicroscopicOther.getText();
         FARemarks = inputFARemarks.getText();
+        String updateFA = "UPDATE SecondaryInfo SET FAColor = ?, FAConsistency = ?, FAGrossOtherFindings = ?, FAOccultBlood = ?," +
+                " FAPusCells = ?, FARBC = ?, FAMicroscopicOtherFindings = ?, FARemarks = ? WHERE MRNID = ?";
+        DBHelper.executeQuery(updateFA, new String[]{color, consistency, grossOther, occultBlood, pusCells, FARBC, microscopicOther,
+        FARemarks, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
         onClose();
     }
 

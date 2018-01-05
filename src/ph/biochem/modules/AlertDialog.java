@@ -17,4 +17,11 @@ public class AlertDialog {
 
         return (result.isPresent()) && (result.get() == ButtonType.OK);
     }
+
+    public String isNull(Object var){
+        if(var == null)
+            return "";
+        else
+            return var.toString();
+    }
 }

@@ -49,8 +49,10 @@ public class ClinicalController extends AlertDialog{
         if(DataHolder.BMI != 0){
             displayBMIScore.setText(Double.toString(DataHolder.BMI));
         }
-        if(!DataHolder.bmiRemarks.isEmpty()){
-            displayBMIRemarks.setPromptText(DataHolder.bmiRemarks);
+        if(DataHolder.bmiRemarks != null){
+            if(!DataHolder.bmiRemarks.isEmpty()){
+                displayBMIRemarks.setPromptText(DataHolder.bmiRemarks);
+            }
         }
         comboEye.setValue(DataHolder.eyeGlasses);
         comboColor.setValue(DataHolder.colorVision);
@@ -69,8 +71,12 @@ public class ClinicalController extends AlertDialog{
         DataHolder.pulseRate = inputPulse.getText();
         DataHolder.respiratoryRate = inputRespiratory.getText();
         DataHolder.bloodPressure = inputBlood.getText();
-        DataHolder.eyeGlasses = comboEye.getValue().toString();
-        DataHolder.colorVision = comboColor.getValue().toString();
+        if(comboEye.getValue()  != null){
+            DataHolder.eyeGlasses = comboEye.getValue().toString();
+        }
+        if(comboColor.getValue() != null){
+            DataHolder.colorVision = comboColor.getValue().toString();
+        }
         DataHolder.right = inputRight.getText();
         DataHolder.left = inputLeft.getText();
         if(!displayBMIRemarks.getPromptText().isEmpty()){

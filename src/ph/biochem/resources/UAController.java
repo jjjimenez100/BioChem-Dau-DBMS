@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+import ph.biochem.modules.DBHelper;
 import ph.biochem.modules.DataHolder;
+import ph.biochem.modules.StatementType;
 
 
 public class UAController {
@@ -72,6 +74,12 @@ public class UAController {
         crystals = inputCrystals.getText();
         UAOthers = inputOthers.getText();
         UARemarks = inputRemarks.getText();
+        String updateUA = "UPDATE SecondaryInfo SET UAColor = ?, UATransparency = ?, UAProtein = ?, UASugar = ?, UASpecGrav = ?, " +
+                "UApHLevel = ?, UAPusCells = ?, UARBC = ?, UAEpithelial = ?, UAMucus = ?, UABacteria = ?, UAUrates = ?, " +
+                "UAPhosphates = ?, UACasts = ?, UACrystals = ?, UAOthers = ?, UARemarks = ? WHERE MRNID = ?";
+        DBHelper.executeQuery(updateUA, new String[]{UAColor, transparency, protein, sugar, specgrav, phLevel, UAPus, UARBC,
+        epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks, Integer.toString(DataHolder.selectedMRNID)},
+                StatementType.UPDATE);
         onClose();
     }
 

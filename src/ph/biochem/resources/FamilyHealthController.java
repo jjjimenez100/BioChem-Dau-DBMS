@@ -85,8 +85,10 @@ public class FamilyHealthController extends AlertDialog{
         inputRemarks.setText(DataHolder.remarks);
         comboSmoker.setValue(DataHolder.smoker);
         comboDrinker.setValue(DataHolder.alcohol);
-        if(!DataHolder.mensDate.isEmpty()){
-            inputMensDate.setValue(LocalDate.parse(DataHolder.mensDate));
+        if(DataHolder.mensDate != null){
+            if(!DataHolder.mensDate.isEmpty()){
+                inputMensDate.setValue(LocalDate.parse(DataHolder.mensDate));
+            }
         }
         inputGravida.setText(DataHolder.gravida);
         inputPara.setText(DataHolder.para);

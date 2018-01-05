@@ -14,13 +14,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ph.biochem.models.Patient;
+import ph.biochem.modules.AlertDialog;
 import ph.biochem.modules.DBHelper;
 import ph.biochem.modules.DataHolder;
 import ph.biochem.modules.StatementType;
 
 import java.time.LocalDate;
 
-public class MainController {
+public class MainController extends AlertDialog{
     @FXML
     private Button btnAddPatient,  btnEditPatient, btnDeletePatient, btnCancel;
     @FXML
@@ -82,7 +83,6 @@ public class MainController {
     private ObservableList<Patient> patients;
     private boolean radioGraphic, CBC, UA, FA, MISC, bloodChemistry;
     private int userMode;
-    private int selectedMRN;
 
     /**
      * Controllers
@@ -167,12 +167,13 @@ public class MainController {
         disableCancelButton(false);
         btnAddPatientSave.setDisable(false);
         userMode = 1;
-        if(clinicalController != null){
+        if(DataHolder.clinicalFormOpened){
             clinicalController.resetValues();
         }
-        if(familyHealthController != null){
+        if(DataHolder.familyFormOpened){
             familyHealthController.resetValues();
         }
+        clearInputFields();
     }
 
     public void onClickBtnSave() throws Exception{
@@ -199,8 +200,8 @@ public class MainController {
             String occupation = inputOccupation.getText();
 
             DBHelper.executeQuery(updatePatientsQuery, new String[]{name, address, contactNumber, gender,
-                    companyName, date, occupation, Integer.toString(selectedMRN)}, StatementType.UPDATE);
-            Patient updatedPatient = patients.get(findPatientIndex(selectedMRN));
+                    companyName, date, occupation, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+            Patient updatedPatient = patients.get(findPatientIndex(DataHolder.selectedMRNID));
             updatedPatient.setName(name);
             updatedPatient.setHomeAddress(address);
             updatedPatient.setCompanyName(companyName);
@@ -208,24 +209,33 @@ public class MainController {
             updatedPatient.setGender(gender);
             updatedPatient.setDate(date);
             updatedPatient.setOccupation(occupation);
+            tblPatients.refresh();
 
-            String updateSecondaryInfo = "UPDATE SecondaryInfo SET CivilStatus = ?, Birthday = ?, EmploymentStatus = ?, Purpose = ?," +
-                    " Temperature = ?, PulseRate = ?, RespiratoryRate = ?, BloodPressure = ?, Weight = ?, Height = ?, Score = ?, " +
-                    "BMIRemarks = ?, EyeGlasses = ?, ColorVision = ?, RightEye = ?, LeftEye = ?, Hospitalizations = ?, Surgery = ?, " +
-                    "PresentMedications = ?, FamilyHistoryRemarks = ?, Smoker = ?, SticksPerDay = ?, SmokerYrs = ?, AlcoholDrinker = ?, " +
-                    "BottlesPerSession = ?, DrinkerYrs = ?, Menstruation = ?, Gravida = ?, Para = ?, TFemale = ?, PFemale = ?, AFemale = ?, " +
-                    "LFemale = ?, MFemale = ? WHERE MRNID = ?";
+            String updateSecondaryInfo = "UPDATE SecondaryInfo SET CivilStatus = ?, Birthday = ?, EmploymentStatus = ?, Purpose = ? WHERE MRNID = ?";
             String birthday = isNull(comboBirthdayMonth.getValue())+"/"+isNull(comboBirthdayDay.getValue())+"/"+isNull(comboBirthdayYear.getValue());
             DBHelper.executeQuery(updateSecondaryInfo, new String[]{isNull(comboCivilStatus.getValue()), birthday,
-                    isNull(comboEmploymentStatus.getValue()), isNull(comboPurpose.getValue()), clinicalController.temperature, clinicalController.pulseRate,
-                    clinicalController.respiratoryRate, clinicalController.bloodPressure, Double.toString(clinicalController.weight), Double.toString(clinicalController.height),
-                    Double.toString(clinicalController.BMI), clinicalController.bmiRemarks, isNull(clinicalController.eyeGlasses), isNull(clinicalController.colorVision),
-                    clinicalController.right, clinicalController.left, isNull(familyHealthController.hospitalizations), isNull(familyHealthController.surgery),
-                    isNull(familyHealthController.presentMed), familyHealthController.remarks, isNull(familyHealthController.smoker), familyHealthController.sticksPerDay,
-                    familyHealthController.smokerYrs, isNull(familyHealthController.alcohol), familyHealthController.bottlesPerSession, familyHealthController.drinkerYrs,
-                    isNull(familyHealthController.mensDate), familyHealthController.gravida, familyHealthController.para, familyHealthController.t,
-                    familyHealthController.p, familyHealthController.a, familyHealthController.l, familyHealthController.m,
-                    Integer.toString(selectedMRN)}, StatementType.UPDATE);
+                    isNull(comboEmploymentStatus.getValue()), isNull(comboPurpose.getValue()), Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+
+            if(DataHolder.familyFormOpened){
+                updateSecondaryInfo = "UPDATE SecondaryInfo SET Hospitalizations = ?, Surgery = ?, " +
+                        "PresentMedications = ?, FamilyHistoryRemarks = ?, Smoker = ?, SticksPerDay = ?, SmokerYrs = ?, AlcoholDrinker = ?, " +
+                        "BottlesPerSession = ?, DrinkerYrs = ?, Menstruation = ?, Gravida = ?, Para = ?, TFemale = ?, PFemale = ?, AFemale = ?, " +
+                        "LFemale = ?, MFemale = ? WHERE MRNID = ?";
+                DBHelper.executeQuery(updateSecondaryInfo, new String[]{isNull(familyHealthController.hospitalizations), isNull(familyHealthController.surgery),
+                        isNull(familyHealthController.presentMed), familyHealthController.remarks, isNull(familyHealthController.smoker), familyHealthController.sticksPerDay,
+                        familyHealthController.smokerYrs, isNull(familyHealthController.alcohol), familyHealthController.bottlesPerSession, familyHealthController.drinkerYrs,
+                        isNull(familyHealthController.mensDate), familyHealthController.gravida, familyHealthController.para, familyHealthController.t,
+                        familyHealthController.p, familyHealthController.a, familyHealthController.l, familyHealthController.m,
+                        Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+            }
+            if(DataHolder.clinicalFormOpened){
+                updateSecondaryInfo = "UPDATE SecondaryInfo SET Temperature = ?, PulseRate = ?, RespiratoryRate = ?, BloodPressure = ?, Weight = ?, Height = ?, Score = ?, " +
+                        "BMIRemarks = ?, EyeGlasses = ?, ColorVision = ?, RightEye = ?, LeftEye = ? WHERE MRNID = ?";
+                DBHelper.executeQuery(updateSecondaryInfo, new String[]{clinicalController.temperature, clinicalController.pulseRate,
+                        clinicalController.respiratoryRate, clinicalController.bloodPressure, Double.toString(clinicalController.weight), Double.toString(clinicalController.height),
+                        Double.toString(clinicalController.BMI), clinicalController.bmiRemarks, isNull(clinicalController.eyeGlasses), isNull(clinicalController.colorVision),
+                        clinicalController.right, clinicalController.left, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+            }
 
             //TODO: TESTS
             //CBC, UA, FA, MISC, bloodChemistry
@@ -244,6 +254,25 @@ public class MainController {
             if(bloodChemistry){
                 bloodChemistryController = showNewScene("BloodChemistry.fxml").<BloodChemistryController>getController();
             }
+            if(radioGraphic){
+                String updateRadiographic = "UPDATE SecondaryInfo SET ChestPA = ?, Impression = ? WHERE MRNID = ?";
+                DBHelper.executeQuery(updateRadiographic, new String[]{txtAreaChestPA.getText(), txtAreaImpression.getText(), Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+            }
+
+            cancel();
+
+            /*String updateCBC = "UPDATE SecondaryInfo SET CBCWBC = ?, CBCLymphocyte = ?, CBCMonocyte = ?, CBCGranulocyte = ?, " +
+                    "CBCMCV = ?, CBCMCH = ?, CBCRBC = ?, CBCHemoglobin = ?, CBCHermatocrit = ?, CBCPlatelet = ?, CBCRemarks = ?," +
+                    "CBCTestType = ? WHERE MRNID = ?";*/
+            /*String updateUA = "UPDATE SecondaryInfo SET UAColor = ?, UATransparency = ?, UAProtein = ?, UASugar = ?, UASpecGrav = ?, " +
+                    "UApHLevel = ?, UAPusCells = ?, UARBC = ?, UAEpithelial = ?, UAMucus = ?, UABacteria = ?, UAUrates = ?, " +
+                    "UAPhosphates = ?, UACasts = ?, UACrystals = ?, UAOthers = ?, UARemarks = ? WHERE MRNID = ?";*/
+            /*String updateFA = "UPDATE SecondaryInfo SET FAColor = ?, FAConsistency = ?, FAGrossOtherFindings = ?, FAOccultBlood = ?," +
+                    " FAPusCells = ?, FARBC = ?, FAMicroscopicOtherFindings = ?, FARemarks = ? WHERE MRNID = ?";*/
+            /*String updateBC = "UPDATE SecondaryInfo SET BCFastingBloodSugar = ?, BCBlood = ?, BCCreatinine = ?, BCUricAcid = ?, " +
+                    "BCCholesterol = ?, BCTriglycerides = ?, BCHDL = ?, BCLDL = ?, BCSGPT = ?, BCSGOT = ?, BCRemarks = ? WHERE" +
+                    " MRNID = ?";*/
+            /*String updateMisc = "UPDATE SecondaryInfo SET MiscTests = ?, MiscRemarks = ? WHERE MRNID = ?";*/
         }
     }
 
@@ -277,18 +306,31 @@ public class MainController {
     }
 
     public void insertPatientSecondaryData(){
-        if(clinicalController != null && familyHealthController != null){
-            String insertQuery = "INSERT INTO SecondaryInfo(CivilStatus, Birthday, EmploymentStatus, Purpose, Temperature, " +
-                    "PulseRate, RespiratoryRate, BloodPressure, Weight, Height, Score, BMIRemarks, EyeGlasses, ColorVision, RightEye," +
-                    "LeftEye, Hospitalizations, Surgery, PresentMedications, FamilyHistoryRemarks, Smoker, SticksPerDay, SmokerYrs, " +
-                    "AlcoholDrinker, BottlesPerSession, DrinkerYrs, Menstruation, Gravida, Para, TFemale, PFemale, AFemale, LFemale," +
-                    "MFemale, MRNID) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            String birthday = isNull(comboBirthdayMonth.getValue())+"/"+isNull(comboBirthdayDay.getValue())+"/"+isNull(comboBirthdayYear.getValue());
-            DBHelper.executeQuery(insertQuery, new String[]{isNull(comboCivilStatus.getValue()), birthday,
-                    isNull(comboEmploymentStatus.getValue()), isNull(comboPurpose.getValue()), clinicalController.temperature, clinicalController.pulseRate,
+        String insertQuery = "INSERT INTO SecondaryInfo(CivilStatus, Birthday, EmploymentStatus, Purpose, MRNID) VALUES(?,?,?,?,?)";
+        String birthday = isNull(comboBirthdayMonth.getValue())+"/"+isNull(comboBirthdayDay.getValue())+"/"+isNull(comboBirthdayYear.getValue());
+        DBHelper.executeQuery(insertQuery, new String[]{isNull(comboCivilStatus.getValue()), birthday,
+                isNull(comboEmploymentStatus.getValue()), isNull(comboPurpose.getValue()),
+                Integer.toString(DBHelper.getLastInsertedID())}, StatementType.INSERT);
+
+        if(DataHolder.clinicalFormOpened){
+            String updateQuery = "UPDATE SecondaryInfo SET Temperature = ?, PulseRate = ?, RespiratoryRate = ?, BloodPressure = ?, " +
+                    "Weight = ?, Height = ?, Score = ?, BMIRemarks = ?, EyeGlasses = ?, ColorVision = ?, RightEye = ?, " +
+                    "LeftEye = ? WHERE MRNID = ?";
+           /* insertQuery = "INSERT INTO SecondaryInfo(Temperature, PulseRate, RespiratoryRate, BloodPressure, Weight, Height, Score, BMIRemarks, EyeGlasses, ColorVision, RightEye," +
+                    "LeftEye, MRNID) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";*/
+            DBHelper.executeQuery(updateQuery, new String[]{isNull(clinicalController.temperature), clinicalController.pulseRate,
                     clinicalController.respiratoryRate, clinicalController.bloodPressure, Double.toString(clinicalController.weight), Double.toString(clinicalController.height),
                     Double.toString(clinicalController.BMI), clinicalController.bmiRemarks, isNull(clinicalController.eyeGlasses), isNull(clinicalController.colorVision),
-                    clinicalController.right, clinicalController.left, isNull(familyHealthController.hospitalizations), isNull(familyHealthController.surgery),
+                    clinicalController.right, clinicalController.left, Integer.toString(DBHelper.getLastInsertedID())}, StatementType.INSERT);
+        }
+        if(DataHolder.familyFormOpened){
+            String updateQuery = "UPDATE SecondaryInfo SET Hospitalizations = ?, Surgery = ?, PresentMedications = ?, FamilyHistoryRemarks = ?, " +
+                    "Smoker = ?, SticksPerDay = ?, SmokerYrs = ?, AlcoholDrinker = ?, BottlesPerSession = ?, DrinkerYrs = ?, Menstruation = ?, Gravida = ?, " +
+                    "Para = ?, TFemale = ?, PFemale = ?, AFemale = ?, LFemale = ?, MFemale = ? WHERE MRNID = ?";
+            /*insertQuery = "INSERT INTO SecondaryInfo(Hospitalizations, Surgery, PresentMedications, FamilyHistoryRemarks, Smoker, SticksPerDay, SmokerYrs, " +
+                    "AlcoholDrinker, BottlesPerSession, DrinkerYrs, Menstruation, Gravida, Para, TFemale, PFemale, AFemale, LFemale," +
+                    "MFemale, MRNID) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";*/
+            DBHelper.executeQuery(updateQuery, new String[]{isNull(familyHealthController.hospitalizations), isNull(familyHealthController.surgery),
                     isNull(familyHealthController.presentMed), familyHealthController.remarks, isNull(familyHealthController.smoker), familyHealthController.sticksPerDay,
                     familyHealthController.smokerYrs, isNull(familyHealthController.alcohol), familyHealthController.bottlesPerSession, familyHealthController.drinkerYrs,
                     isNull(familyHealthController.mensDate), familyHealthController.gravida, familyHealthController.para, familyHealthController.t,
@@ -304,11 +346,12 @@ public class MainController {
         disableAddInputFields(false);
         tblPatients.setDisable(true);
         disableLaboratoryResults(false);
+        comboTestType.setDisable(true);
         userMode = 2;
 
         Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
-        selectedMRN = selectedPatient.getMRN();
-        DBHelper.executeQuery("SELECT * FROM SecondaryInfo WHERE MRNID = " + selectedMRN);
+        DataHolder.selectedMRNID = selectedPatient.getMRN();
+        DBHelper.executeQuery("SELECT * FROM SecondaryInfo WHERE MRNID = " + DataHolder.selectedMRNID);
 
         inputName.setText(selectedPatient.getName());
         inputAddress.setText(selectedPatient.getHomeAddress());
@@ -389,6 +432,7 @@ public class MainController {
         btnAddPatientSave.setDisable(true);
         tblPatients.setDisable(false);
         disableLaboratoryResults(true);
+        disableRadioGraphic(true);
     }
 
     public void disableAddInputFields(boolean value){
@@ -528,6 +572,7 @@ public class MainController {
         comboTestType.setDisable(value);
         radioCorporate.setDisable(value);
         radioSanitary.setDisable(value);
+        inputOtherTests.setDisable(value);
     }
 
     public void clearInputFields(){
@@ -542,5 +587,18 @@ public class MainController {
         comboBirthdayMonth.setValue("");
         comboBirthdayYear.setValue("");
 
+    }
+
+    public void onClickBtnDelete(){
+        if(showDialogBox("Confirmation", "Are you sure you want to delete the selected patient?")){
+            Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
+            String deletePatient = "DELETE from PATIENTS WHERE MRN = ?";
+            String deleteSecondaryInfo = "DELETE from SecondaryInfo where MRNID = ?";
+            int patientMRN = selectedPatient.getMRN();
+            DBHelper.executeQuery(deletePatient, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
+            DBHelper.executeQuery(deleteSecondaryInfo, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
+            patients.remove(selectedPatient);
+            tblPatients.refresh();
+        }
     }
 }

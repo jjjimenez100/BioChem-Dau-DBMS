@@ -8,6 +8,7 @@ public class DataHolder {
     public static String hospitalizations="", surgery="", presentMed="", remarks="", smoker="", alcohol="", mensDate="",
             gravida="", para="", t="", p="", a="", l="", m="", sticksPerDay="", smokerYrs="", bottlesPerSession="", drinkerYrs="";
 
+    //
     public static String fasting="", bloodUrea="", creatinine="", bloodUric="", totalCholesterol="", triglycerides="", HDL="",
             LDL="", SGPT="", SGOT="", bloodChemistryRemarks="";
 
@@ -23,6 +24,6 @@ public class DataHolder {
     public static String miscTests, miscRemarks;
 
     public static boolean familyFormOpened = false, clinicalFormOpened = false;
-    public static boolean radioGraphicOpened = false, CBC = false, UA = false,
-            FA = false, MISC = false, bloodChemistry = false;
+
+    public static int selectedMRNID = 0;
 }
