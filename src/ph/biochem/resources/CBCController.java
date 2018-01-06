@@ -30,6 +30,7 @@ public class CBCController extends AlertDialog{
     @FXML
     public void initialize(){
         setValues();
+        initComboBox();
     }
 
     private void setValues(){
@@ -79,6 +80,9 @@ public class CBCController extends AlertDialog{
                 "CBCTestType = ? WHERE MRNID = ?";
         DBHelper.executeQuery(updateCBC, new String[]{wbc, lymphocyte, monocyte, granulocytes, MCV, MCH, RBC, Hemoglobin,
         Hermatocrit, Platelet, cbcRemarks, isNull(comboTestType.getValue()), Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+        DataHolder.config.createConfigTest("CBC.biochem", new String[]{
+                isNull(comboTestType.getValue()), wbc, lymphocyte, monocyte, granulocytes, MCV, MCH, MCHC, RBC, Hemoglobin, Hermatocrit, Platelet, cbcRemarks
+        });
         onClose();
     }
 

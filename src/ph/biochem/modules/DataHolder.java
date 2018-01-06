@@ -26,4 +26,6 @@ public class DataHolder {
     public static boolean familyFormOpened = false, clinicalFormOpened = false;
 
     public static int selectedMRNID = 0;
+
+    public static ConfigManagement config;
 }

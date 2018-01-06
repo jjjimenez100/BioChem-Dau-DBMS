@@ -14,12 +14,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ph.biochem.models.Patient;
-import ph.biochem.modules.AlertDialog;
-import ph.biochem.modules.DBHelper;
-import ph.biochem.modules.DataHolder;
-import ph.biochem.modules.StatementType;
+import ph.biochem.modules.*;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class MainController extends AlertDialog{
     @FXML
@@ -81,6 +80,7 @@ public class MainController extends AlertDialog{
      */
 
     private ObservableList<Patient> patients;
+    private boolean corporate, sanitary, individual;
     private boolean radioGraphic, CBC, UA, FA, MISC, bloodChemistry;
     private int userMode;
 
@@ -144,7 +144,7 @@ public class MainController extends AlertDialog{
         comboCivilStatus.getItems().addAll(new String[]{"Single", "Married", "Common Law", "Widow/er", "Legally Seperated"});
         comboEmploymentStatus.getItems().addAll(new String[]{"New Applicant", "Probationary", "Regular", "Contractual"});
         comboPurpose.getItems().addAll((new String[]{"Medical Consulation", "PEME", "Annual Medical Examination"}));
-        comboTestType.getItems().addAll(new String[]{"Radiographic", "CBC", "UA", "FA", "Blood Chemistry"});
+        comboTestType.getItems().addAll(new String[]{"Radiographic", "CBC", "UA", "FA", "Blood Chemistry", "Misc"});
     }
 
     public void initComboBox(JFXComboBox combo, JFXComboBox combo2, int start, int end, int increment){
@@ -177,6 +177,7 @@ public class MainController extends AlertDialog{
     }
 
     public void onClickBtnSave() throws Exception{
+        String directoryPath = "FindAndReplace/FindAndReplace/bin/debug/config/";
         if(userMode == 1){ //add user
             insertNewPatient();
             tblPatients.requestFocus();
@@ -239,6 +240,16 @@ public class MainController extends AlertDialog{
 
             //TODO: TESTS
             //CBC, UA, FA, MISC, bloodChemistry
+            if(corporate){
+                DataHolder.config = new ConfigManagement(true, false, false, directoryPath, name, companyName, inputOtherTests.getText());
+            }
+            else if(sanitary){
+                DataHolder.config = new ConfigManagement(false, true, false, directoryPath, name, companyName, inputOtherTests.getText());
+            }
+            else{
+                DataHolder.config = new ConfigManagement(false, false, true, directoryPath, name, companyName, inputOtherTests.getText());
+            }
+
             if(CBC){
                 cbcController = showNewScene("CBC.fxml").<CBCController>getController();
             }
@@ -257,7 +268,12 @@ public class MainController extends AlertDialog{
             if(radioGraphic){
                 String updateRadiographic = "UPDATE SecondaryInfo SET ChestPA = ?, Impression = ? WHERE MRNID = ?";
                 DBHelper.executeQuery(updateRadiographic, new String[]{txtAreaChestPA.getText(), txtAreaImpression.getText(), Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+                DataHolder.config.createConfigTest("Radiographic.biochem", new String[]{"START",txtAreaChestPA.getText(),"END", txtAreaImpression.getText()});
             }
+            DBHelper.executeQuery("SELECT * FROM PATIENTS WHERE MRN = ?",
+                    new String[]{Integer.toString(DataHolder.selectedMRNID)}, StatementType.SELECT);
+            DataHolder.config.createConfigTest("PersonalInfo.biochem", new String[]{Integer.toString(DataHolder.selectedMRNID),
+            name, getAge(birthday), gender, birthday, companyName});
 
             cancel();
 
@@ -274,6 +290,12 @@ public class MainController extends AlertDialog{
                     " MRNID = ?";*/
             /*String updateMisc = "UPDATE SecondaryInfo SET MiscTests = ?, MiscRemarks = ? WHERE MRNID = ?";*/
         }
+    }
+
+    private String getAge(String birthday){
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("M/d/yyyy");
+        LocalDate convertedBirthday = LocalDate.parse(birthday, format);
+        return Integer.toString(Period.between(convertedBirthday, LocalDate.now()).getYears());
     }
 
     private int findPatientIndex(int MRN){
@@ -340,80 +362,81 @@ public class MainController extends AlertDialog{
     }
 
     public void editPatient(){
-        disableControlButtons(true);
-        disableCancelButton(false);
-        btnAddPatientSave.setDisable(false);
-        disableAddInputFields(false);
-        tblPatients.setDisable(true);
-        disableLaboratoryResults(false);
-        comboTestType.setDisable(true);
-        userMode = 2;
-
         Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
-        DataHolder.selectedMRNID = selectedPatient.getMRN();
-        DBHelper.executeQuery("SELECT * FROM SecondaryInfo WHERE MRNID = " + DataHolder.selectedMRNID);
+        if(selectedPatient != null){
+            disableControlButtons(true);
+            disableCancelButton(false);
+            btnAddPatientSave.setDisable(false);
+            disableAddInputFields(false);
+            tblPatients.setDisable(true);
+            disableLaboratoryResults(false);
+            comboTestType.setDisable(true);
+            userMode = 2;
 
-        inputName.setText(selectedPatient.getName());
-        inputAddress.setText(selectedPatient.getHomeAddress());
-        inputContactNumber.setText(selectedPatient.getContactNumber());
+            DataHolder.selectedMRNID = selectedPatient.getMRN();
+            DBHelper.executeQuery("SELECT * FROM SecondaryInfo WHERE MRNID = " + DataHolder.selectedMRNID);
 
-        if(selectedPatient.getGender().equals("Male")){
-            radioGenderMale.setSelected(true);
+            inputName.setText(selectedPatient.getName());
+            inputAddress.setText(selectedPatient.getHomeAddress());
+            inputContactNumber.setText(selectedPatient.getContactNumber());
+
+            if(selectedPatient.getGender().equals("Male")){
+                radioGenderMale.setSelected(true);
+            }
+            else{
+                radioGenderFemale.setSelected(true);
+            }
+
+            inputCompanyName.setText(selectedPatient.getCompanyName());
+            String[] dates = selectedPatient.getDate().split("/");
+            comboDateMonth.setValue(Integer.parseInt(dates[0]));
+            comboDateDay.setValue(Integer.parseInt(dates[1]));
+            comboDateYear.setValue(Integer.parseInt(dates[2]));
+
+            inputOccupation.setText(selectedPatient.getOccupation());
+
+            String birthday = DBHelper.getStrData("Birthday");
+            String[] birthSplit = birthday.split("/");
+            comboBirthdayMonth.setValue(Integer.parseInt(birthSplit[0]));
+            comboBirthdayDay.setValue(Integer.parseInt(birthSplit[1]));
+            comboBirthdayYear.setValue(Integer.parseInt(birthSplit[2]));
+
+            comboEmploymentStatus.setValue(DBHelper.getStrData("EmploymentStatus"));
+            comboPurpose.setValue(DBHelper.getStrData("Purpose"));
+            comboCivilStatus.setValue(DBHelper.getStrData("CivilStatus"));
+
+            //cache values
+            DataHolder.temperature = DBHelper.getStrData("Temperature");
+            DataHolder.pulseRate = DBHelper.getStrData("PulseRate");
+            DataHolder.respiratoryRate = DBHelper.getStrData("RespiratoryRate");
+            DataHolder.bloodPressure = DBHelper.getStrData("BloodPressure");
+            DataHolder.weight = DBHelper.getIntData("Weight");
+            DataHolder.height = DBHelper.getIntData("Height");
+            DataHolder.BMI = DBHelper.getIntData("Score");
+            DataHolder.bmiRemarks = DBHelper.getStrData("BMIRemarks");
+            DataHolder.eyeGlasses = DBHelper.getStrData("EyeGlasses");
+            DataHolder.colorVision = DBHelper.getStrData("ColorVision");
+            DataHolder.right = DBHelper.getStrData("RightEye");
+            DataHolder.left = DBHelper.getStrData("LeftEye");
+            DataHolder.hospitalizations = DBHelper.getStrData("Hospitalizations");
+            DataHolder.surgery = DBHelper.getStrData("Surgery");
+            DataHolder.presentMed = DBHelper.getStrData("PresentMedications");
+            DataHolder.remarks = DBHelper.getStrData("FamilyHistoryRemarks");
+            DataHolder.smoker = DBHelper.getStrData("Smoker");
+            DataHolder.sticksPerDay = DBHelper.getStrData("SticksPerDay");
+            DataHolder.smokerYrs = DBHelper.getStrData("SmokerYrs");
+            DataHolder.alcohol = DBHelper.getStrData("AlcoholDrinker");
+            DataHolder.bottlesPerSession = DBHelper.getStrData("BottlesPerSession");
+            DataHolder.drinkerYrs = DBHelper.getStrData("DrinkerYrs");
+            DataHolder.mensDate = DBHelper.getStrData("Menstruation");
+            DataHolder.gravida = DBHelper.getStrData("Gravida");
+            DataHolder.para = DBHelper.getStrData("Para");
+            DataHolder.t = DBHelper.getStrData("TFemale");
+            DataHolder.p = DBHelper.getStrData("PFemale");
+            DataHolder.a = DBHelper.getStrData("AFemale");
+            DataHolder.l = DBHelper.getStrData("LFemale");
+            DataHolder.m = DBHelper.getStrData("MFemale");
         }
-        else{
-            radioGenderFemale.setSelected(true);
-        }
-
-        inputCompanyName.setText(selectedPatient.getCompanyName());
-        String[] dates = selectedPatient.getDate().split("/");
-        comboDateMonth.setValue(Integer.parseInt(dates[0]));
-        comboDateDay.setValue(Integer.parseInt(dates[1]));
-        comboDateYear.setValue(Integer.parseInt(dates[2]));
-
-        inputOccupation.setText(selectedPatient.getOccupation());
-
-        String birthday = DBHelper.getStrData("Birthday");
-        String[] birthSplit = birthday.split("/");
-        comboBirthdayMonth.setValue(Integer.parseInt(birthSplit[0]));
-        comboBirthdayDay.setValue(Integer.parseInt(birthSplit[1]));
-        comboBirthdayYear.setValue(Integer.parseInt(birthSplit[2]));
-
-        comboEmploymentStatus.setValue(DBHelper.getStrData("EmploymentStatus"));
-        comboPurpose.setValue(DBHelper.getStrData("Purpose"));
-        comboCivilStatus.setValue(DBHelper.getStrData("CivilStatus"));
-
-        //cache values
-        DataHolder.temperature = DBHelper.getStrData("Temperature");
-        DataHolder.pulseRate = DBHelper.getStrData("PulseRate");
-        DataHolder.respiratoryRate = DBHelper.getStrData("RespiratoryRate");
-        DataHolder.bloodPressure = DBHelper.getStrData("BloodPressure");
-        DataHolder.weight = DBHelper.getIntData("Weight");
-        DataHolder.height = DBHelper.getIntData("Height");
-        DataHolder.BMI = DBHelper.getIntData("Score");
-        DataHolder.bmiRemarks = DBHelper.getStrData("BMIRemarks");
-        DataHolder.eyeGlasses = DBHelper.getStrData("EyeGlasses");
-        DataHolder.colorVision = DBHelper.getStrData("ColorVision");
-        DataHolder.right = DBHelper.getStrData("RightEye");
-        DataHolder.left = DBHelper.getStrData("LeftEye");
-        DataHolder.hospitalizations = DBHelper.getStrData("Hospitalizations");
-        DataHolder.surgery = DBHelper.getStrData("Surgery");
-        DataHolder.presentMed = DBHelper.getStrData("PresentMedications");
-        DataHolder.remarks = DBHelper.getStrData("FamilyHistoryRemarks");
-        DataHolder.smoker = DBHelper.getStrData("Smoker");
-        DataHolder.sticksPerDay = DBHelper.getStrData("SticksPerDay");
-        DataHolder.smokerYrs = DBHelper.getStrData("SmokerYrs");
-        DataHolder.alcohol = DBHelper.getStrData("AlcoholDrinker");
-        DataHolder.bottlesPerSession = DBHelper.getStrData("BottlesPerSession");
-        DataHolder.drinkerYrs = DBHelper.getStrData("DrinkerYrs");
-        DataHolder.mensDate = DBHelper.getStrData("Menstruation");
-        DataHolder.gravida = DBHelper.getStrData("Gravida");
-        DataHolder.para = DBHelper.getStrData("Para");
-        DataHolder.t = DBHelper.getStrData("TFemale");
-        DataHolder.p = DBHelper.getStrData("PFemale");
-        DataHolder.a = DBHelper.getStrData("AFemale");
-        DataHolder.l = DBHelper.getStrData("LFemale");
-        DataHolder.m = DBHelper.getStrData("MFemale");
-        //end cache
     }
 
     public String isNull(Object o){
@@ -509,6 +532,8 @@ public class MainController extends AlertDialog{
         radioSanitary.setDisable(true);
         inputOtherTests.setDisable(true);
         disableRadioGraphic(true);
+        corporate = sanitary = false;
+        individual = true;
     }
 
     public void onChangeCorporate(){
@@ -516,6 +541,9 @@ public class MainController extends AlertDialog{
         CBC = UA = FA = radioGraphic = true;
         bloodChemistry = false;
         MISC = false;
+        corporate = true;
+        sanitary = false;
+        individual = false;
         disableRadioGraphic(false);
     }
 
@@ -525,6 +553,9 @@ public class MainController extends AlertDialog{
         CBC = false;
         bloodChemistry = false;
         MISC = false;
+        corporate = false;
+        sanitary = true;
+        individual = false;
         disableRadioGraphic(false);
     }
 
@@ -554,6 +585,11 @@ public class MainController extends AlertDialog{
             else if(testChoice.equals("Blood Chemistry")){
                 bloodChemistry = true;
                 radioGraphic = CBC = UA = FA = MISC = false;
+                disableRadioGraphic(true);
+            }
+            else if(testChoice.equals("Misc")){
+                MISC = true;
+                radioGraphic = CBC = UA = FA = bloodChemistry = false;
                 disableRadioGraphic(true);
             }
         }

@@ -80,6 +80,8 @@ public class UAController {
         DBHelper.executeQuery(updateUA, new String[]{UAColor, transparency, protein, sugar, specgrav, phLevel, UAPus, UARBC,
         epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks, Integer.toString(DataHolder.selectedMRNID)},
                 StatementType.UPDATE);
+        DataHolder.config.createConfigTest("UA.biochem", new String[]{UAColor, transparency, protein, sugar, specgrav, phLevel, UAPus, UARBC,
+                epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks});
         onClose();
     }
 

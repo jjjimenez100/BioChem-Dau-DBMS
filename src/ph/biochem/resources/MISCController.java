@@ -37,6 +37,7 @@ public class MISCController {
         miscTests = inputMiscTests.getText();
         String updateMisc = "UPDATE SecondaryInfo SET MiscTests = ?, MiscRemarks = ? WHERE MRNID = ?";
         DBHelper.executeQuery(updateMisc, new String[]{miscTests, miscRemarks, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+        DataHolder.config.createConfigTest("Misc.biochem", new String[]{miscTests, miscRemarks});
         onClose();
     }
 

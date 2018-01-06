@@ -64,6 +64,8 @@ public class BloodChemistryController {
                 " MRNID = ?";
         DBHelper.executeQuery(updateBC, new String[]{fasting, bloodUrea, creatinine, bloodUric, totalCholesterol, triglycerides,
         HDL, LDL, SGPT, SGOT, bloodChemistryRemarks, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+        DataHolder.config.createConfigTest("BloodChemistry.biochem", new String[]{fasting, bloodUrea, creatinine, bloodUric, totalCholesterol,
+                triglycerides, HDL, LDL, SGPT, SGOT, bloodChemistryRemarks});
         onClose();
     }
 

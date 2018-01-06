@@ -54,6 +54,8 @@ public class FAController {
                 " FAPusCells = ?, FARBC = ?, FAMicroscopicOtherFindings = ?, FARemarks = ? WHERE MRNID = ?";
         DBHelper.executeQuery(updateFA, new String[]{color, consistency, grossOther, occultBlood, pusCells, FARBC, microscopicOther,
         FARemarks, Integer.toString(DataHolder.selectedMRNID)}, StatementType.UPDATE);
+        DataHolder.config.createConfigTest("FA.biochem", new String[]{color, consistency, grossOther,
+                occultBlood, pusCells, FARBC, microscopicOther, FARemarks, FARemarks});
         onClose();
     }
 
