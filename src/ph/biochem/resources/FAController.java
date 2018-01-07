@@ -61,7 +61,7 @@ public class FAController {
 
     public void onClose(){
         resetValues();
-        Stage FAForm = (Stage) btnClose.getScene().getWindow();
+        Stage FAForm = (Stage) btnSave.getScene().getWindow();
         FAForm.close();
     }
 }

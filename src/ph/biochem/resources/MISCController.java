@@ -43,7 +43,7 @@ public class MISCController {
 
     public void onClose(){
         resetValues();
-        Stage MISCForm = (Stage) btnClose.getScene().getWindow();
+        Stage MISCForm = (Stage) btnSave.getScene().getWindow();
         MISCForm.close();
     }
 }

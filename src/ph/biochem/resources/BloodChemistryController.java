@@ -71,7 +71,7 @@ public class BloodChemistryController {
 
     public void onClose(){
         resetValues();
-        Stage bloodChemistryForm = (Stage) btnClose.getScene().getWindow();
+        Stage bloodChemistryForm = (Stage) btnSave.getScene().getWindow();
         bloodChemistryForm.close();
     }
 }

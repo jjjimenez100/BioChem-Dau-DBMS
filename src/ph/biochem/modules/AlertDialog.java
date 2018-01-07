@@ -18,6 +18,13 @@ public class AlertDialog {
         return (result.isPresent()) && (result.get() == ButtonType.OK);
     }
 
+    public void showSuccess(String title, String msg){
+        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setContentText(msg);
+        alert.showAndWait();
+    }
+
     public String isNull(Object var){
         if(var == null)
             return "";

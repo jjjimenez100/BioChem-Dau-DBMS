@@ -7,9 +7,10 @@ public class ConfigManagement {
     private boolean corporate, sanitary, individual;
     private boolean debugMode;
     private PrintWriter output;
-    private String directoryPath, name, companyName, otherTests;
+    private String directoryPath, name, companyName, otherTests, indivTestType;
 
-    public ConfigManagement(boolean corporate, boolean sanitary, boolean individual, String directoryPath, String name, String companyName, String otherTests) {
+    public ConfigManagement(boolean corporate, boolean sanitary, boolean individual, String directoryPath,
+                            String name, String companyName, String otherTests, String indivTestType) {
         this.corporate = corporate;
         this.sanitary = sanitary;
         this.individual = individual;
@@ -18,19 +19,20 @@ public class ConfigManagement {
         this.name = name;
         this.companyName = companyName;
         this.otherTests = otherTests;
+        this.indivTestType = indivTestType;
         createConfigPackages();
     }
 
     private void createConfigPackages(){
         createNewTextFile(directoryPath + "/packages.biochem");
         if(corporate){
-            writeToTextFile(new String[]{name, companyName, "true", "false", "false", otherTests});
+            writeToTextFile(new String[]{name, companyName, "true", "false", "false", indivTestType, otherTests});
         }
         else if(sanitary){
-            writeToTextFile(new String[]{name, companyName, "false", "true", "false", otherTests});
+            writeToTextFile(new String[]{name, companyName, "false", "true", "false", indivTestType, otherTests});
         }
         else{
-            writeToTextFile(new String[]{name, companyName, "false", "false", "true", otherTests});
+            writeToTextFile(new String[]{name, companyName, "false", "false", "true", indivTestType, otherTests});
         }
         closeIOStream();
     }

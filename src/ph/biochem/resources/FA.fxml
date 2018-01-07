@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="305.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.FAController">
+<AnchorPane prefHeight="305.0" prefWidth="748.0" style="-fx-background-color: #81c244;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.FAController">
     <children>
         <Label layoutX="307.0" layoutY="20.0" text="Fecalysis Results">
             <font>
@@ -21,12 +21,11 @@
         <JFXTextField fx:id="inputPus" layoutX="383.0" layoutY="105.0" promptText="Pus Cells/HPF" />
         <JFXTextField fx:id="inputRBC" layoutX="383.0" layoutY="142.0" promptText="RBC/HPF" />
         <TextArea fx:id="inputFARemarks" layoutX="543.0" layoutY="119.0" prefHeight="90.0" prefWidth="154.0" promptText="Remarks" />
-        <Button fx:id="btnSave" layoutX="270.0" layoutY="244.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" text="Save">
+        <Button fx:id="btnSave" layoutX="324.0" layoutY="241.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Save">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
         </Button>
-        <Button fx:id="btnClose" layoutX="383.0" layoutY="244.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" text="Close" />
         <Label layoutX="130.0" layoutY="74.0" text="Gross Examination">
             <font>
                 <Font name="System Bold" size="12.0" />
@@ -39,18 +38,18 @@
         </Label>
         <JFXTextField fx:id="inputOccult" layoutX="205.0" layoutY="142.0" promptText="Occult Blood" />
         <JFXTextField fx:id="inputMicroscopicOther" layoutX="383.0" layoutY="181.0" promptText="Other Findings" />
-        <Separator layoutY="59.0" prefWidth="200.0" />
-        <Separator layoutX="180.0" layoutY="59.0" prefWidth="200.0" />
-        <Separator layoutX="327.0" layoutY="59.0" prefWidth="200.0" />
-        <Separator layoutX="515.0" layoutY="59.0" prefWidth="230.0" />
-        <Separator layoutY="101.0" prefWidth="200.0" />
-        <Separator layoutX="195.0" layoutY="101.0" prefWidth="200.0" />
-        <Separator layoutX="392.0" layoutY="101.0" prefWidth="200.0" />
-        <Separator layoutX="356.0" layoutY="222.0" prefWidth="200.0" />
-        <Separator layoutX="520.0" layoutY="222.0" prefWidth="230.0" />
-        <Separator layoutX="515.0" layoutY="101.0" prefWidth="230.0" />
-        <Separator layoutY="222.0" prefWidth="200.0" />
-        <Separator layoutX="158.0" layoutY="222.0" prefWidth="200.0" />
-      <Separator layoutX="355.0" layoutY="59.0" orientation="VERTICAL" prefHeight="162.0" />
+        <Separator layoutY="59.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="180.0" layoutY="59.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="327.0" layoutY="59.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="515.0" layoutY="59.0" prefWidth="230.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutY="101.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="195.0" layoutY="101.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="392.0" layoutY="101.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="356.0" layoutY="222.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="520.0" layoutY="222.0" prefWidth="230.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="515.0" layoutY="101.0" prefWidth="230.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutY="222.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+        <Separator layoutX="158.0" layoutY="222.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="355.0" layoutY="59.0" orientation="VERTICAL" prefHeight="162.0" style="-fx-background-color: #30aedf;" />
     </children>
 </AnchorPane>

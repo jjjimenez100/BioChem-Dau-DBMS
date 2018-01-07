@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="344.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.CBCController">
+<AnchorPane prefHeight="344.0" prefWidth="566.0" style="-fx-background-color: #81c244;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.CBCController">
     <children>
         <Label layoutX="236.0" layoutY="14.0" text="CBC Results">
             <font>
@@ -28,22 +28,21 @@
       <JFXTextField fx:id="inputHermatocrit" layoutX="205.0" layoutY="216.0" promptText="Hermatocrit" />
       <JFXTextField fx:id="inputPlatelet" layoutX="385.0" layoutY="59.0" promptText="Platelet" />
       <TextArea fx:id="inputCBCRemarks" layoutX="385.0" layoutY="110.0" prefHeight="59.0" prefWidth="135.0" promptText="Remarks" />
-      <Button fx:id="btnSave" layoutX="199.0" layoutY="288.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" text="Save">
+      <Button fx:id="btnSave" layoutX="249.0" layoutY="285.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Save">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnClose" layoutX="299.0" layoutY="288.0" mnemonicParsing="false" onAction="#onClose" prefHeight="36.0" prefWidth="74.0" text="Close" />
-      <Separator layoutY="51.0" prefWidth="200.0" />
-      <Separator layoutX="172.0" layoutY="51.0" prefWidth="200.0" />
-      <Separator layoutX="183.0" layoutY="53.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Separator layoutX="369.0" layoutY="52.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Separator layoutX="359.0" layoutY="51.0" prefWidth="200.0" />
-      <Separator layoutX="7.0" layoutY="270.0" prefWidth="200.0" />
-      <Separator layoutX="179.0" layoutY="270.0" prefWidth="200.0" />
-      <Separator layoutX="366.0" layoutY="270.0" prefWidth="200.0" />
+      <Separator layoutY="51.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="172.0" layoutY="51.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="183.0" layoutY="53.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="369.0" layoutY="52.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="359.0" layoutY="51.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="7.0" layoutY="270.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="179.0" layoutY="270.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="366.0" layoutY="270.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
       <JFXComboBox fx:id="comboTestType" layoutX="385.0" layoutY="189.0" prefHeight="25.0" prefWidth="135.0" promptText="CBC Test Type" />
-      <Separator layoutX="183.0" layoutY="72.0" orientation="VERTICAL" prefHeight="200.0" />
-      <Separator layoutX="369.0" layoutY="72.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Separator layoutX="183.0" layoutY="72.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
+      <Separator layoutX="369.0" layoutY="72.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
     </children>
 </AnchorPane>

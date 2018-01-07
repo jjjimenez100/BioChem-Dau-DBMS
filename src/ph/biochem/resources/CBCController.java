@@ -88,7 +88,7 @@ public class CBCController extends AlertDialog{
 
     public void onClose(){
         resetValues();
-        Stage CBCForm = (Stage) btnClose.getScene().getWindow();
+        Stage CBCForm = (Stage) btnSave.getScene().getWindow();
         CBCForm.close();
     }
 }

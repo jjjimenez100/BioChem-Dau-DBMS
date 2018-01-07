@@ -18,7 +18,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../resources/MainMenu.fxml"));
         //primaryStage.initStyle(StageStyle.UNIFIED);
         primaryStage.setTitle("BioChem Angeles");
-        primaryStage.setScene(new Scene(root, 1209, 644));
+        primaryStage.setScene(new Scene(root, 1209, 617));
         primaryStage.show();
     }
 }

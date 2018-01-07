@@ -4,8 +4,13 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,12 +18,18 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import ph.biochem.models.Patient;
 import ph.biochem.modules.*;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 
 public class MainController extends AlertDialog{
     @FXML
@@ -43,7 +54,7 @@ public class MainController extends AlertDialog{
     private JFXTextField inputName, inputAddress, inputContactNumber, inputCompanyName, inputOccupation;
 
     @FXML
-    private Label lblPatient, lblDate, lblBirthday, lblEmployment, lblRequired;
+    private Label lblPatient, lblDate, lblBirthday, lblEmployment, lblRequired, lblTime, lblDateView;
 
     @FXML
     private JFXComboBox comboCivilStatus, comboDateMonth, comboDateDay, comboDateYear, comboBirthdayMonth, comboBirthdayDay, comboBirthdayYear, comboEmploymentStatus, comboPurpose;
@@ -62,7 +73,7 @@ public class MainController extends AlertDialog{
     private Label lblMedical, lblLaboratory, lblRadioGraphic;
 
     @FXML
-    private Button btnClinicalMeasurements, btnFamilyHealthHistory;
+    private Button btnClinicalMeasurements, btnFamilyHealthHistory, btnResults;
 
     @FXML
     private JFXRadioButton radioPackages, radioIndividualTests, radioCorporate, radioSanitary;
@@ -103,6 +114,28 @@ public class MainController extends AlertDialog{
         DBHelper.connectToDatabase();
         initTableView();
         initComboBoxes();
+        initTimeView();
+        initDateView();
+    }
+
+    private void initDateView(){
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MMMM dd yyyy, EEEE");
+        lblDateView.setText(LocalDate.now().format(format));
+    }
+
+    private void initTimeView(){
+        Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+            Calendar cal = Calendar.getInstance();
+            int second = cal.get(Calendar.SECOND);
+            int minute = cal.get(Calendar.MINUTE);
+            int hour = cal.get(Calendar.HOUR);
+
+            lblTime.setText(hour + ":" + (minute) + ":" + second + " " + (cal.get(Calendar.AM_PM) == Calendar.PM ? "PM" : "AM") );
+        }),
+                new KeyFrame(Duration.seconds(1))
+        );
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
     }
 
     private void initTableView(){
@@ -133,8 +166,47 @@ public class MainController extends AlertDialog{
                     DBHelper.getStrData("Date"), DBHelper.getStrData("occupation")));
         }
 
-        tblPatients.setItems(patients);
+        FilteredList<Patient> filter = new FilteredList<>(patients);
+        inputSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filter.setPredicate(patient -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (patient.getName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (Integer.toString(patient.getMRN()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getHomeAddress().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getContactNumber().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getGender().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getCompanyName().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getDate().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                else if (patient.getOccupation().toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+        SortedList<Patient> sortedPatients = new SortedList<>(filter);
+        sortedPatients.comparatorProperty().bind(tblPatients.comparatorProperty());
+
         tblPatients.getColumns().addAll(colMRN, colName, colAddress, colContactNumber, colGender, colCompanyName, colDate, colOccupation);
+        tblPatients.setItems(sortedPatients);
     }
 
     public void initComboBoxes(){
@@ -241,13 +313,14 @@ public class MainController extends AlertDialog{
             //TODO: TESTS
             //CBC, UA, FA, MISC, bloodChemistry
             if(corporate){
-                DataHolder.config = new ConfigManagement(true, false, false, directoryPath, name, companyName, inputOtherTests.getText());
+                DataHolder.config = new ConfigManagement(true, false, false, directoryPath, name, companyName, "", inputOtherTests.getText());
             }
             else if(sanitary){
-                DataHolder.config = new ConfigManagement(false, true, false, directoryPath, name, companyName, inputOtherTests.getText());
+                DataHolder.config = new ConfigManagement(false, true, false, directoryPath, name, companyName, "",inputOtherTests.getText());
             }
             else{
-                DataHolder.config = new ConfigManagement(false, false, true, directoryPath, name, companyName, inputOtherTests.getText());
+                DataHolder.config = new ConfigManagement(false, false, true, directoryPath, name, companyName,
+                        comboTestType.getValue().toString(), inputOtherTests.getText());
             }
 
             if(CBC){
@@ -274,9 +347,11 @@ public class MainController extends AlertDialog{
                     new String[]{Integer.toString(DataHolder.selectedMRNID)}, StatementType.SELECT);
             DataHolder.config.createConfigTest("PersonalInfo.biochem", new String[]{Integer.toString(DataHolder.selectedMRNID),
             name, getAge(birthday), gender, birthday, companyName});
+            DataHolder.config.createConfigTest("Gender.biochem", new String[]{gender});
 
-            cancel();
-
+            btnResults.setDisable(false);
+            btnAddPatientSave.setDisable(true);
+            showSuccess("Message", "Enter lab results and click the generate button.");
             /*String updateCBC = "UPDATE SecondaryInfo SET CBCWBC = ?, CBCLymphocyte = ?, CBCMonocyte = ?, CBCGranulocyte = ?, " +
                     "CBCMCV = ?, CBCMCH = ?, CBCRBC = ?, CBCHemoglobin = ?, CBCHermatocrit = ?, CBCPlatelet = ?, CBCRemarks = ?," +
                     "CBCTestType = ? WHERE MRNID = ?";*/
@@ -290,6 +365,13 @@ public class MainController extends AlertDialog{
                     " MRNID = ?";*/
             /*String updateMisc = "UPDATE SecondaryInfo SET MiscTests = ?, MiscRemarks = ? WHERE MRNID = ?";*/
         }
+    }
+
+    public void onClickBtnResults() throws IOException{
+        Runtime.getRuntime().exec("FindAndReplace/FindAndReplace/bin/Debug/FindAndReplace.exe", null, new File("FindAndReplace/FindAndReplace/bin/Debug/"));
+        cancel();
+        btnResults.setDisable(true);
+        showSuccess("Message", "Reports generated.");
     }
 
     private String getAge(String birthday){
@@ -437,6 +519,9 @@ public class MainController extends AlertDialog{
             DataHolder.l = DBHelper.getStrData("LFemale");
             DataHolder.m = DBHelper.getStrData("MFemale");
         }
+        else{
+            showSuccess("Oops!", "Select a patient from the table first.");
+        }
     }
 
     public String isNull(Object o){
@@ -456,6 +541,7 @@ public class MainController extends AlertDialog{
         tblPatients.setDisable(false);
         disableLaboratoryResults(true);
         disableRadioGraphic(true);
+        btnResults.setDisable(true);
     }
 
     public void disableAddInputFields(boolean value){
@@ -513,6 +599,7 @@ public class MainController extends AlertDialog{
         Stage stage = new Stage();
         stage.setScene(new Scene(loader.load()));
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
 
         return loader;
@@ -626,15 +713,21 @@ public class MainController extends AlertDialog{
     }
 
     public void onClickBtnDelete(){
-        if(showDialogBox("Confirmation", "Are you sure you want to delete the selected patient?")){
-            Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
-            String deletePatient = "DELETE from PATIENTS WHERE MRN = ?";
-            String deleteSecondaryInfo = "DELETE from SecondaryInfo where MRNID = ?";
-            int patientMRN = selectedPatient.getMRN();
-            DBHelper.executeQuery(deletePatient, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
-            DBHelper.executeQuery(deleteSecondaryInfo, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
-            patients.remove(selectedPatient);
-            tblPatients.refresh();
+        Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
+        if(selectedPatient != null){
+            if(showDialogBox("Confirmation", "Are you sure you want to delete patient " + selectedPatient.getName() + " ?")){
+                String deletePatient = "DELETE from PATIENTS WHERE MRN = ?";
+                String deleteSecondaryInfo = "DELETE from SecondaryInfo where MRNID = ?";
+                int patientMRN = selectedPatient.getMRN();
+                DBHelper.executeQuery(deletePatient, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
+                DBHelper.executeQuery(deleteSecondaryInfo, new String[]{Integer.toString(patientMRN)}, StatementType.DELETE);
+                patients.remove(selectedPatient);
+                tblPatients.refresh();
+            }
         }
+        else{
+            showSuccess("Oops!", "Select a patient from the table first.");
+        }
+
     }
 }
