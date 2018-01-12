@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BioChemAngelesDBMS:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/biochem/resources/Dates.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ph/biochem/resources/DatesController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/database/biochemdb.db" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/database/biochemdb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/ConfigManagement.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/ConfigManagement.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/models/Patient.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/models/Patient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/DBHelper.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/DBHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/DataHolder.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/modules/DataHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/prototypes/test.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/prototypes/test.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/BloodChemistryController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/BloodChemistryController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/CBCController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/CBCController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/FAController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/FAController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MISCController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MISCController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MainController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MainController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/UAController.class" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/UAController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/database/biochemdb.db" afterPath="$PROJECT_DIR$/src/ph/biochem/database/biochemdb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FindAndReplace/FindAndReplace/Program.cs" afterPath="$PROJECT_DIR$/FindAndReplace/FindAndReplace/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/BloodChemistry.fxml" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/BloodChemistry.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MainMenu.fxml" afterPath="$PROJECT_DIR$/out/production/BioChemAngelesDBMS/ph/biochem/resources/MainMenu.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java" afterPath="$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/modules/ConfigManagement.java" afterPath="$PROJECT_DIR$/src/ph/biochem/modules/ConfigManagement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/models/Patient.java" afterPath="$PROJECT_DIR$/src/ph/biochem/models/Patient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java" afterPath="$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java" afterPath="$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/prototypes/Main.java" afterPath="$PROJECT_DIR$/src/ph/biochem/prototypes/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/prototypes/test.java" afterPath="$PROJECT_DIR$/src/ph/biochem/prototypes/test.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistry.fxml" afterPath="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistry.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistryController.java" afterPath="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistryController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ph/biochem/resources/CBC.fxml" afterPath="$PROJECT_DIR$/src/ph/biochem/resources/CBC.fxml" />
@@ -82,7 +101,91 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="395" column="63" lean-forward="true" selection-start-line="395" selection-start-column="63" selection-end-line="395" selection-end-column="73" />
+              <folding>
+                <element signature="docComment;field#inputName#0;class#MainController#0" expanded="false" />
+                <element signature="docComment;field#lblMedical#0;class#MainController#0" expanded="false" />
+                <element signature="docComment;field#patients#0;class#MainController#0" expanded="false" />
+                <element signature="docComment;field#clinicalController#0;class#MainController#0" expanded="false" />
+                <element signature="docComment;method#initialize#0;class#MainController#0" expanded="false" />
+                <element signature="method#initialize#0;class#MainController#0" expanded="false" />
+                <element signature="method#initDateView#0;class#MainController#0" expanded="false" />
+                <element signature="method#initTimeView#0;class#MainController#0" expanded="false" />
+                <element signature="e#3982#4330#0" expanded="false" />
+                <element signature="method#initTableView#0;class#MainController#0" expanded="false" />
+                <element signature="e#6281#7720#0" expanded="false" />
+                <element signature="e#6351#7708#0" expanded="false" />
+                <element signature="method#initComboBoxes#0;class#MainController#0" expanded="false" />
+                <element signature="method#initComboBox#0;class#MainController#0" expanded="false" />
+                <element signature="method#addPatient#0;class#MainController#0" expanded="false" />
+                <element signature="e#15177#15190#0" expanded="false" />
+                <element signature="e#15961#15976#0" expanded="true" />
+                <element signature="method#onClickBtnResults#0;class#MainController#0" expanded="false" />
+                <element signature="method#findPatientIndex#0;class#MainController#0" expanded="false" />
+                <element signature="method#insertNewPatient#0;class#MainController#0" expanded="false" />
+                <element signature="method#insertPatientPrimaryData#0;class#MainController#0" expanded="false" />
+                <element signature="method#insertPatientSecondaryData#0;class#MainController#0" expanded="false" />
+                <element signature="method#editPatient#0;class#MainController#0" expanded="false" />
+                <element signature="method#isNull#0;class#MainController#0" expanded="false" />
+                <element signature="method#cancel#0;class#MainController#0" expanded="false" />
+                <element signature="method#disableAddInputFields#0;class#MainController#0" expanded="false" />
+                <element signature="method#disableControlButtons#0;class#MainController#0" expanded="false" />
+                <element signature="method#onClickBtnClinicalMeasurements#0;class#MainController#0" expanded="false" />
+                <element signature="method#onClickBtnFamilyHistory#0;class#MainController#0" expanded="false" />
+                <element signature="method#showNewScene#0;class#MainController#0" expanded="false" />
+                <element signature="method#packagesOnChange#0;class#MainController#0" expanded="false" />
+                <element signature="method#individualTestsOnChange#0;class#MainController#0" expanded="false" />
+                <element signature="method#onChangeCorporate#0;class#MainController#0" expanded="false" />
+                <element signature="method#onChangeSanitary#0;class#MainController#0" expanded="false" />
+                <element signature="method#onChangeComboOtherTests#0;class#MainController#0" expanded="false" />
+                <element signature="method#disableRadioGraphic#0;class#MainController#0" expanded="false" />
+                <element signature="method#disableLaboratoryResults#0;class#MainController#0" expanded="false" />
+                <element signature="method#clearInputFields#0;class#MainController#0" expanded="false" />
+                <element signature="method#onClickBtnDelete#0;class#MainController#0" expanded="false" />
+                <element signature="method#onClickBtnPrint#0;class#MainController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatesController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/DatesController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,6 +207,8 @@
       <find>bl</find>
       <find>testType</find>
       <find>HWPFDocument</find>
+      <find>inputCompanyName</find>
+      <find>WHERE</find>
     </findStrings>
     <replaceStrings>
       <replace>value</replace>
@@ -134,11 +239,9 @@
         <option value="$PROJECT_DIR$/src/ph/biochem/modules/StatementType.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/s.fxml" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/MainMenu.fxml" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/models/Patient.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/TestController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/ClinicalMeasurements.fxml" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/FamilyHealthHistory.fxml" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/modules/ClinicalFamilyValueHolder.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistry.fxml" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/CBC.fxml" />
@@ -149,20 +252,24 @@
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/ClinicalController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/modules/DocxGenerator.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/prototypes/sasg.java" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/prototypes/test.java" />
         <option value="$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/UA.biochem" />
         <option value="$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/CBC.biochem" />
         <option value="$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/Radiographic.biochem" />
         <option value="$PROJECT_DIR$/src/ph/biochem/modules/ConfigManagement.java" />
         <option value="$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/packages.biochem" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/models/Patient.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/resources/CBCController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/FAController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/MISCController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/UAController.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistryController.java" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/resources/CBCController.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/resources/Dates.fxml" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/resources/MainController.java" />
-        <option value="$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/prototypes/test.java" />
+        <option value="$PROJECT_DIR$/src/ph/biochem/resources/DatesController.java" />
         <option value="$PROJECT_DIR$/src/ph/biochem/prototypes/Main.java" />
       </list>
     </option>
@@ -177,8 +284,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1370" />
-    <option name="height" value="744" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -199,9 +306,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,11 +317,95 @@
               <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="2017-04 Accenture" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="2017-04 Accenture" type="462c0819:PsiDirectoryNode" />
+              <item name="2017-204-2013 Joshua Jimenez" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="Debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="FindAndReplace" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="Debug" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="biochem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="biochem" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="biochem" type="462c0819:PsiDirectoryNode" />
+              <item name="prototypes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BioChemAngelesDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BioChemAngelesDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="biochem" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,22 +420,23 @@
     <property name="dynamic.classpath" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Major Subjects/6COMTHEORY/JPlusPlus" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/DSS-RankingApp" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\dependencies" />
-      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\database" />
-      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem" />
-      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\dependencies" />
       <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\files" />
+      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\prototypes" />
+      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\dependencies" />
+      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem\database" />
+      <recent name="F:\Documents\BS in CompSci\BioChemAngelesDBMS\src\ph\biochem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -471,39 +664,46 @@
       <workItem from="1515190955925" duration="3876000" />
       <workItem from="1515219978568" duration="8983000" />
       <workItem from="1515242416302" duration="9737000" />
-      <workItem from="1515294290106" duration="20952000" />
+      <workItem from="1515294290106" duration="21522000" />
+      <workItem from="1515344570962" duration="136000" />
+      <workItem from="1515344762236" duration="601000" />
+      <workItem from="1515391917575" duration="633000" />
+      <workItem from="1515647237429" duration="867000" />
+      <workItem from="1515750095696" duration="22015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169070000" />
+    <option name="totallyTimeSpent" value="193892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23202614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25869894" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23202614" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27987897" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -515,7 +715,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -567,7 +766,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="24" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -580,103 +779,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/TestController.java" />
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/ClinicalMeasurements.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="180" lean-forward="false" selection-start-line="10" selection-start-column="180" selection-end-line="10" selection-end-column="180" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FamilyHealthHistory.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="184" lean-forward="false" selection-start-line="11" selection-start-column="184" selection-end-line="11" selection-end-column="184" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/CBC.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="175" lean-forward="false" selection-start-line="11" selection-start-column="175" selection-end-line="11" selection-end-column="175" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FA.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="174" lean-forward="false" selection-start-line="10" selection-start-column="174" selection-end-line="10" selection-end-column="174" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/Misc.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="176" lean-forward="false" selection-start-line="9" selection-start-column="176" selection-end-line="9" selection-end-column="176" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistry.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/models/PatientSecondaryInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <marker date="1514599811027" expanded="true" signature="2338:2364" ph="SELECT last_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/MainMenu.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="33" selection-end-line="149" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/ClinicalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="78" column="9" lean-forward="false" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FamilyHealthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="155" column="15" lean-forward="false" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/DocxGenerator.java" />
@@ -700,24 +811,6 @@
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/sasg.java" />
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/templates/packages.biochem" />
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/templates/dada.txt" />
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/Misc.biochem" />
     <entry file="file://$PROJECT_DIR$/config/BloodChemistry.biochem" />
     <entry file="file://$PROJECT_DIR$/config/CBC.biochem" />
@@ -730,7 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="94" lean-forward="true" selection-start-line="20" selection-start-column="94" selection-end-line="20" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -765,6 +857,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/CBC.biochem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/Misc.biochem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.base/java/util/function/Predicate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/packages.biochem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/models/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/ClinicalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="78" column="9" lean-forward="false" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="55" column="43" lean-forward="false" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FamilyHealthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="155" column="15" lean-forward="false" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
+          <folding>
+            <element signature="e#6157#6158#0" expanded="false" />
+            <element signature="e#6223#6224#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/MISCController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="38" column="103" lean-forward="false" selection-start-line="38" selection-start-column="103" selection-end-line="38" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/UAController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="80" column="119" lean-forward="false" selection-start-line="80" selection-start-column="119" selection-end-line="80" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/ph/biochem/dependencies/sqlite-jdbc-3.21.0.jar!/org/sqlite/jdbc3/JDBC3ResultSet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/ph/biochem/dependencies/sqlite-jdbc-3.21.0.jar!/org/sqlite/core/CoreResultSet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/javafx.fxml/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="1785" column="0" lean-forward="false" selection-start-line="1785" selection-start-column="0" selection-end-line="1785" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1839">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding>
+            <marker date="1515785902101" expanded="true" signature="2428:2454" ph="SELECT last_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/ConfigManagement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="98" column="30" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/MRNNo.biochem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/BloodChemistry.biochem">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -773,103 +1009,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/ConfigManagement.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/Dates.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/CBC.biochem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/Misc.biochem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/FAController.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/DataHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/MISCController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/UAController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="89" column="38" lean-forward="false" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/BloodChemistryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="50" selection-end-line="73" selection-end-column="50" />
+        <state relative-caret-position="468">
+          <caret line="34" column="38" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/CBCController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="90" column="39" lean-forward="false" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+        <state relative-caret-position="400">
+          <caret line="90" column="8" lean-forward="true" selection-start-line="90" selection-start-column="8" selection-end-line="91" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9/lib/src.zip!/java.base/java/util/function/Predicate.java">
+    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/Dates.biochem">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state relative-caret-position="34">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/models/Patient.java">
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="204">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/DatesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="67" lean-forward="true" selection-start-line="19" selection-start-column="67" selection-end-line="19" selection-end-column="67" />
           <folding>
-            <element signature="e#2279#2280#0" expanded="true" />
-            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ph/biochem/modules/AlertDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/resources/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="717" column="28" lean-forward="false" selection-start-line="717" selection-start-column="15" selection-end-line="717" selection-end-column="28" />
+        <state relative-caret-position="99">
+          <caret line="395" column="63" lean-forward="true" selection-start-line="395" selection-start-column="63" selection-end-line="395" selection-end-column="73" />
           <folding>
             <element signature="docComment;field#inputName#0;class#MainController#0" expanded="false" />
             <element signature="docComment;field#lblMedical#0;class#MainController#0" expanded="false" />
@@ -879,21 +1075,21 @@
             <element signature="method#initialize#0;class#MainController#0" expanded="false" />
             <element signature="method#initDateView#0;class#MainController#0" expanded="false" />
             <element signature="method#initTimeView#0;class#MainController#0" expanded="false" />
-            <element signature="e#3798#4146#0" expanded="false" />
+            <element signature="e#3982#4330#0" expanded="false" />
             <element signature="method#initTableView#0;class#MainController#0" expanded="false" />
-            <element signature="e#6097#7554#0" expanded="false" />
-            <element signature="e#6167#7542#0" expanded="false" />
+            <element signature="e#6281#7720#0" expanded="false" />
+            <element signature="e#6351#7708#0" expanded="false" />
             <element signature="method#initComboBoxes#0;class#MainController#0" expanded="false" />
             <element signature="method#initComboBox#0;class#MainController#0" expanded="false" />
             <element signature="method#addPatient#0;class#MainController#0" expanded="false" />
-            <element signature="method#onClickBtnSave#0;class#MainController#0" expanded="false" />
-            <element signature="e#14608#14621#0" expanded="false" />
+            <element signature="e#15177#15190#0" expanded="false" />
+            <element signature="e#15961#15976#0" expanded="true" />
             <element signature="method#onClickBtnResults#0;class#MainController#0" expanded="false" />
-            <element signature="method#getAge#0;class#MainController#0" expanded="false" />
             <element signature="method#findPatientIndex#0;class#MainController#0" expanded="false" />
             <element signature="method#insertNewPatient#0;class#MainController#0" expanded="false" />
             <element signature="method#insertPatientPrimaryData#0;class#MainController#0" expanded="false" />
             <element signature="method#insertPatientSecondaryData#0;class#MainController#0" expanded="false" />
+            <element signature="method#editPatient#0;class#MainController#0" expanded="false" />
             <element signature="method#isNull#0;class#MainController#0" expanded="false" />
             <element signature="method#cancel#0;class#MainController#0" expanded="false" />
             <element signature="method#disableAddInputFields#0;class#MainController#0" expanded="false" />
@@ -909,22 +1105,16 @@
             <element signature="method#disableRadioGraphic#0;class#MainController#0" expanded="false" />
             <element signature="method#disableLaboratoryResults#0;class#MainController#0" expanded="false" />
             <element signature="method#clearInputFields#0;class#MainController#0" expanded="false" />
+            <element signature="method#onClickBtnDelete#0;class#MainController#0" expanded="false" />
+            <element signature="method#onClickBtnPrint#0;class#MainController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ph/biochem/prototypes/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FindAndReplace/FindAndReplace/bin/Debug/config/packages.biochem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="238">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -935,11 +1125,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
+          <last-edited>BioChemAngelesDBMS:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

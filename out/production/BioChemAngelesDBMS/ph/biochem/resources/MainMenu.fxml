@@ -14,47 +14,52 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="1209.0" style="-fx-background-color: #81c244;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="617.0" prefWidth="1209.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.MainController">
    <top>
       <VBox prefHeight="47.0" prefWidth="1209.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="42.0" prefWidth="795.0" />
             <AnchorPane prefHeight="69.0" prefWidth="943.0">
                <children>
-                <Button fx:id="btnAddPatient" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#addPatient" style="-fx-color: #30aedf;" text="Add New Patient">
+                <Button fx:id="btnAddPatient" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#addPatient" style="-fx-color: #30aedf;" text="Add New Patient">
                      <font>
                         <Font name="Gill Sans MT" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnEditPatient" layoutX="127.0" layoutY="8.0" mnemonicParsing="false" onAction="#editPatient" style="-fx-color: #30aedf;" text="Update Existing">
+                  <Button fx:id="btnEditPatient" layoutX="127.0" layoutY="2.0" mnemonicParsing="false" onAction="#editPatient" style="-fx-color: #30aedf;" text="Update Existing">
                      <font>
                         <Font name="Gill Sans MT" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnDeletePatient" layoutX="236.0" layoutY="8.0" mnemonicParsing="false" onAction="#onClickBtnDelete" style="-fx-color: #30aedf;" text="Delete Existing">
+                  <Button fx:id="btnDeletePatient" layoutX="236.0" layoutY="2.0" mnemonicParsing="false" onAction="#onClickBtnDelete" style="-fx-color: #30aedf;" text="Delete Existing">
                      <font>
                         <Font name="Gill Sans MT" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnCancel" cancelButton="true" disable="true" layoutX="340.0" layoutY="7.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Cancel">
+                  <Button fx:id="btnCancel" cancelButton="true" disable="true" layoutX="441.0" layoutY="1.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Cancel">
                      <font>
                         <Font name="Gill Sans MT" size="12.0" />
                      </font>
                   </Button>
-                  <JFXTextField fx:id="inputSearch" layoutX="569.0" layoutY="7.0" prefHeight="25.0" prefWidth="207.0" promptText="search query">
+                  <JFXTextField fx:id="inputSearch" layoutX="569.0" layoutY="1.0" prefHeight="25.0" prefWidth="207.0" promptText="search query">
                      <font>
                         <Font name="Gill Sans MT" size="12.0" />
                      </font></JFXTextField>
-                  <Label fx:id="lblTime" layoutX="1070.0" layoutY="13.0" text="sas">
+                  <Label fx:id="lblTime" layoutX="1069.0" layoutY="8.0" text="sas">
                      <font>
                         <Font name="Gill Sans MT" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblDateView" layoutX="840.0" layoutY="13.0" text="sas">
+                  <Label fx:id="lblDateView" layoutX="839.0" layoutY="8.0" text="sas">
                      <font>
                         <Font name="Gill Sans MT" size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="btnPrint" layoutX="342.0" layoutY="2.0" mnemonicParsing="false" onAction="#onClickBtnPrint" style="-fx-color: #30aedf;" text="Print Records">
+                     <font>
+                        <Font name="Gill Sans MT" size="12.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
          </children>
       </VBox>
@@ -74,59 +79,61 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="inputName" disable="true" layoutX="18.0" layoutY="51.0" prefHeight="25.0" prefWidth="177.0" promptText="Name*" style="-fx-color: #30aedf;" />
-            <JFXTextField fx:id="inputAddress" disable="true" layoutX="18.0" layoutY="76.0" prefHeight="25.0" prefWidth="176.0" promptText="Home Address*" style="-fx-color: #30aedf;" />
-            <JFXTextField fx:id="inputContactNumber" disable="true" layoutX="18.0" layoutY="101.0" prefHeight="25.0" prefWidth="178.0" promptText="Contact Number*" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboCivilStatus" disable="true" layoutX="20.0" layoutY="133.0" prefHeight="25.0" prefWidth="177.0" promptText="Civil Status*" style="-fx-color: #30aedf;" />
-            <Label fx:id="lblBirthday" disable="true" layoutX="8.0" layoutY="231.0" style="-fx-color: #30aedf;" text="Birthday*" />
-            <JFXComboBox fx:id="comboBirthdayMonth" disable="true" layoutX="9.0" layoutY="247.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboBirthdayDay" disable="true" layoutX="65.0" layoutY="247.0" prefHeight="25.0" prefWidth="67.0" promptText="Day" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboBirthdayYear" disable="true" layoutX="129.0" layoutY="247.0" prefHeight="25.0" prefWidth="71.0" promptText="Year" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboDateMonth" disable="true" layoutX="9.0" layoutY="189.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboDateDay" disable="true" layoutX="65.0" layoutY="189.0" prefHeight="25.0" prefWidth="65.0" promptText="Day" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboDateYear" disable="true" layoutX="129.0" layoutY="189.0" prefHeight="25.0" prefWidth="70.0" promptText="Year" style="-fx-color: #30aedf;" />
-            <Label fx:id="lblDate" disable="true" layoutX="8.0" layoutY="171.0" style="-fx-color: #30aedf;" text="Date*" />
+            <JFXTextField fx:id="inputName" disable="true" layoutX="19.0" layoutY="67.0" prefHeight="25.0" prefWidth="177.0" promptText="Name*" style="-fx-color: #30aedf;" />
+            <JFXTextField fx:id="inputAddress" disable="true" layoutX="19.0" layoutY="92.0" prefHeight="25.0" prefWidth="176.0" promptText="Home Address*" style="-fx-color: #30aedf;" />
+            <JFXTextField fx:id="inputContactNumber" disable="true" layoutX="19.0" layoutY="117.0" prefHeight="25.0" prefWidth="178.0" promptText="Contact Number*" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboCivilStatus" disable="true" layoutX="21.0" layoutY="149.0" prefHeight="25.0" prefWidth="177.0" promptText="Civil Status*" style="-fx-color: #30aedf;" />
+            <Label fx:id="lblBirthday" disable="true" layoutX="9.0" layoutY="240.0" style="-fx-color: #30aedf;" text="Birthday*" />
+            <JFXComboBox fx:id="comboBirthdayMonth" disable="true" layoutX="10.0" layoutY="263.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboBirthdayDay" disable="true" layoutX="66.0" layoutY="263.0" prefHeight="25.0" prefWidth="67.0" promptText="Day" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboBirthdayYear" disable="true" layoutX="130.0" layoutY="263.0" prefHeight="25.0" prefWidth="71.0" promptText="Year" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboDateMonth" disable="true" layoutX="10.0" layoutY="202.0" prefHeight="25.0" prefWidth="56.0" promptText="Month" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboDateDay" disable="true" layoutX="67.0" layoutY="202.0" prefHeight="25.0" prefWidth="65.0" promptText="Day" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboDateYear" disable="true" layoutX="131.0" layoutY="202.0" prefHeight="25.0" prefWidth="70.0" promptText="Year" style="-fx-color: #30aedf;" />
+            <Label fx:id="lblDate" disable="true" layoutX="9.0" layoutY="187.0" style="-fx-color: #30aedf;" text="Date*" />
             <Label fx:id="lblEmployment" disable="true" layoutX="54.0" layoutY="343.0" style="-fx-color: #30aedf;" text="Employment Record">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="inputCompanyName" disable="true" layoutX="13.0" layoutY="379.0" prefHeight="25.0" prefWidth="181.0" promptText="Company Name*" style="-fx-color: #30aedf;" />
-            <JFXTextField fx:id="inputOccupation" disable="true" layoutX="13.0" layoutY="414.0" prefHeight="25.0" prefWidth="179.0" promptText="Occupation*" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboEmploymentStatus" disable="true" layoutX="13.0" layoutY="451.0" prefHeight="25.0" prefWidth="179.0" promptText="Employment Status (Optional)" style="-fx-color: #30aedf;" />
-            <JFXComboBox fx:id="comboPurpose" disable="true" layoutX="13.0" layoutY="489.0" prefHeight="25.0" prefWidth="180.0" promptText="Purpose (Optional)" style="-fx-color: #30aedf;" />
+            <JFXTextField fx:id="inputOccupation" disable="true" layoutX="10.0" layoutY="431.0" prefHeight="25.0" prefWidth="179.0" promptText="Occupation*" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboEmploymentStatus" disable="true" layoutX="10.0" layoutY="468.0" prefHeight="25.0" prefWidth="179.0" promptText="Employment Status (Optional)" style="-fx-color: #30aedf;" />
+            <JFXComboBox fx:id="comboPurpose" disable="true" layoutX="10.0" layoutY="506.0" prefHeight="25.0" prefWidth="180.0" promptText="Purpose (Optional)" style="-fx-color: #30aedf;" />
             <Button fx:id="btnFamilyHealthHistory" disable="true" layoutX="217.0" layoutY="76.0" mnemonicParsing="false" onAction="#onClickBtnFamilyHistory" style="-fx-color: #30aedf;" text="Family Health History (Optional)" />
             <Button fx:id="btnClinicalMeasurements" disable="true" layoutX="214.0" layoutY="41.0" mnemonicParsing="false" onAction="#onClickBtnClinicalMeasurements" style="-fx-color: #30aedf;" text="Clinical Measurements (Optional)" />
-            <Label fx:id="lblMedical" disable="true" layoutX="247.0" layoutY="8.0" style="-fx-color: #30aedf;" text="Medical Information">
+            <Label fx:id="lblMedical" disable="true" layoutX="255.0" layoutY="9.0" style="-fx-color: #30aedf;" text="Medical Information">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="lblLaboratory" disable="true" layoutX="250.0" layoutY="118.0" style="-fx-color: #30aedf;" text="Laboratory Results">
+            <Label fx:id="lblLaboratory" disable="true" layoutX="260.0" layoutY="118.0" style="-fx-color: #30aedf;" text="Laboratory Results">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <Button fx:id="btnAddPatientSave" disable="true" layoutX="221.0" layoutY="500.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="28.0" prefWidth="86.0" style="-fx-color: #30aedf;" text="Save Patient" />
-            <JFXRadioButton fx:id="radioGenderMale" disable="true" layoutX="4.0" layoutY="293.0" style="-fx-color: #30aedf;" text="Male">
+            <JFXRadioButton fx:id="radioGenderMale" disable="true" layoutX="5.0" layoutY="309.0" style="-fx-color: #30aedf;" text="Male">
                <toggleGroup>
                   <ToggleGroup fx:id="radioButtonGender" />
                </toggleGroup>
             </JFXRadioButton>
-            <JFXRadioButton fx:id="radioGenderFemale" disable="true" layoutX="70.0" layoutY="293.0" style="-fx-color: #30aedf;" text="Female" toggleGroup="$radioButtonGender" />
+            <JFXRadioButton fx:id="radioGenderFemale" disable="true" layoutX="71.0" layoutY="309.0" style="-fx-color: #30aedf;" text="Female" toggleGroup="$radioButtonGender" />
             <Separator layoutX="9.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="206.0" layoutY="1.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="206.0" layoutY="201.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="206.0" layoutY="339.0" orientation="VERTICAL" prefHeight="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="11.0" layoutY="538.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
-            <Separator layoutX="9.0" layoutY="50.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
+            <Separator layoutX="12.0" layoutY="30.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="9.0" layoutY="337.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="9.0" layoutY="370.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
-            <JFXRadioButton fx:id="radioCorporate" disable="true" layoutX="220.0" layoutY="179.0" onAction="#onChangeCorporate" style="-fx-color: #30aedf;" text="Corporate (CBC, UA, FA, R)">
+            <JFXRadioButton fx:id="radioCorporate" disable="true" layoutX="220.0" layoutY="179.0" onAction="#onChangeCorporate" style="-fx-color: #30aedf;" text="Corporate (CBC, UA, FA, XRay)">
                <toggleGroup>
                   <ToggleGroup fx:id="radioButtonPackages" />
-               </toggleGroup></JFXRadioButton>
-            <JFXRadioButton fx:id="radioSanitary" disable="true" layoutX="221.0" layoutY="214.0" onAction="#onChangeSanitary" style="-fx-color: #30aedf;" text="Sanitary (UA, FA, R)" toggleGroup="$radioButtonPackages" />
+               </toggleGroup>
+               <font>
+                  <Font size="11.0" />
+               </font></JFXRadioButton>
+            <JFXRadioButton fx:id="radioSanitary" disable="true" layoutX="221.0" layoutY="214.0" onAction="#onChangeSanitary" style="-fx-color: #30aedf;" text="Sanitary (UA, FA, XRay)" toggleGroup="$radioButtonPackages" />
             <JFXComboBox fx:id="comboTestType" disable="true" layoutX="236.0" layoutY="301.0" onAction="#onChangeComboOtherTests" prefHeight="25.0" prefWidth="140.0" promptText="Choose test type" style="-fx-color: #30aedf;" />
             <Label fx:id="lblRadioGraphic" disable="true" layoutX="250.0" layoutY="343.0" style="-fx-color: #30aedf;" text="Radiographic Results">
                <font>
@@ -149,12 +156,10 @@
             <Separator layoutX="203.0" layoutY="369.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
             <Separator layoutX="207.0" layoutY="537.0" prefWidth="200.0" style="-fx-background-color: #30aedf;" />
             <JFXTextField fx:id="inputOtherTests" disable="true" layoutX="238.0" layoutY="236.0" promptText="Others" style="-fx-color: #30aedf;" />
-            <Label fx:id="lblRequired" disable="true" layoutX="69.0" layoutY="27.0" style="-fx-color: #30aedf;" text="* required field">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
-               </font>
-            </Label>
             <Button fx:id="btnResults" disable="true" layoutX="313.0" layoutY="500.0" mnemonicParsing="false" onAction="#onClickBtnResults" prefHeight="28.0" prefWidth="76.0" style="-fx-color: #30aedf;" text="Generate" />
+            <JFXTextField fx:id="inputMRNNo" disable="true" layoutX="19.0" layoutY="41.0" prefHeight="25.0" prefWidth="175.0" promptText="MRN No." />
+            <JFXComboBox fx:id="inputCompanyName" disable="true" editable="true" layoutX="11.0" layoutY="399.0" prefHeight="25.0" prefWidth="179.0" />
+            <Label fx:id="lblCompanyName" disable="true" layoutX="10.0" layoutY="382.0" text="Company Name*" />
          </children>
       </AnchorPane>
    </right>

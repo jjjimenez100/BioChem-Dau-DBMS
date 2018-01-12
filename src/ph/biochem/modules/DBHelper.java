@@ -7,6 +7,7 @@ public class DBHelper {
     private static ResultSet data;
     private static Connection connection = null;
     private static boolean debugMode = true;
+    //private static boolean isNextCalled = false;
 
     public static void connectToDatabase(){
         try{
@@ -46,6 +47,7 @@ public class DBHelper {
 
            if(statementType == StatementType.SELECT){
                data = statement.executeQuery();
+//               isNextCalled = false;
            }
 
            else{
@@ -91,6 +93,7 @@ public class DBHelper {
 
     public static boolean hasNextData(){
         try{
+//            isNextCalled = true;
             return data.next();
         }
 
@@ -106,6 +109,9 @@ public class DBHelper {
 
     public static int getIntData(String colName){
         try{
+/*            if(!isNextCalled){
+                data.next();
+            }*/
             return data.getInt(colName);
         }
 
@@ -121,6 +127,9 @@ public class DBHelper {
 
     public static String getStrData(String colName){
         try{
+            /*if(!isNextCalled){
+                data.next();
+            }*/
             return data.getString(colName);
         }
 
@@ -131,6 +140,17 @@ public class DBHelper {
             }
 
             return null;
+        }
+    }
+
+    public static void next(){
+        try{
+            data.next();
+        }
+        catch(SQLException e){
+            if(debugMode){
+                System.out.println("fuk");
+            }
         }
     }
 }

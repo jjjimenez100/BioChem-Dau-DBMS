@@ -11,6 +11,9 @@ public class DataHolder {
     //
     public static String fasting="", bloodUrea="", creatinine="", bloodUric="", totalCholesterol="", triglycerides="", HDL="",
             LDL="", SGPT="", SGOT="", bloodChemistryRemarks="";
+    //
+    public static String fastingSI="", bloodUreaSI="", creatinineSI="", bloodUricSI="", totalCholesterolSI="", triglyceridesSI="",
+            HDLSI="", LDLSI="";
 
     public static String wbc="", lymphocyte="", monocyte="", granulocytes="", MCV="", MCH="", MCHC="", CBCRBC="", Hemoglobin="",
             Hermatocrit="", Platelet="", cbcRemarks="", testType="";
@@ -25,7 +28,9 @@ public class DataHolder {
 
     public static boolean familyFormOpened = false, clinicalFormOpened = false;
 
-    public static int selectedMRNID = 0;
+    public static String selectedMRNID = "";
 
     public static ConfigManagement config;
+
+    public static String dateRequest="", datePerformed="", dateReleased="";
 }

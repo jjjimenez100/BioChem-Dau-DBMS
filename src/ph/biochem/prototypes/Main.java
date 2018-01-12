@@ -17,7 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../resources/MainMenu.fxml"));
         //primaryStage.initStyle(StageStyle.UNIFIED);
-        primaryStage.setTitle("BioChem Angeles");
+        primaryStage.setTitle("BioChem Healthcare Services");
         primaryStage.setScene(new Scene(root, 1209, 617));
         primaryStage.show();
     }

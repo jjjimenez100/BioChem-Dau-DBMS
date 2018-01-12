@@ -78,7 +78,7 @@ public class UAController {
                 "UApHLevel = ?, UAPusCells = ?, UARBC = ?, UAEpithelial = ?, UAMucus = ?, UABacteria = ?, UAUrates = ?, " +
                 "UAPhosphates = ?, UACasts = ?, UACrystals = ?, UAOthers = ?, UARemarks = ? WHERE MRNID = ?";
         DBHelper.executeQuery(updateUA, new String[]{UAColor, transparency, protein, sugar, specgrav, phLevel, UAPus, UARBC,
-        epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks, Integer.toString(DataHolder.selectedMRNID)},
+        epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks, DataHolder.selectedMRNID},
                 StatementType.UPDATE);
         DataHolder.config.createConfigTest("UA.biochem", new String[]{UAColor, transparency, protein, sugar, specgrav, phLevel, UAPus, UARBC,
                 epithelial, mucus, bacteria, urates, phosphates, casts, crystals, UAOthers, UARemarks});

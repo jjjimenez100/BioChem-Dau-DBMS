@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="361.0" prefWidth="718.0" style="-fx-background-color: #81c244;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.UAController">
+<AnchorPane prefHeight="361.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.biochem.resources.UAController">
     <children>
         <Label layoutX="307.0" layoutY="20.0" text="Urinalysis Results">
             <font>

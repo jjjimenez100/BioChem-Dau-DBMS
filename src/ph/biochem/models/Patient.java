@@ -4,7 +4,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Patient {
-    private SimpleIntegerProperty MRN;
+    private SimpleStringProperty MRN;
     private SimpleStringProperty name;
     private SimpleStringProperty homeAddress;
     private SimpleStringProperty contactNumber;
@@ -13,8 +13,8 @@ public class Patient {
     private SimpleStringProperty date;
     private SimpleStringProperty occupation;
 
-    public Patient(int MRN, String name, String homeAddress, String contactNumber, String gender, String companyName, String date, String occupation) {
-        this.MRN = new SimpleIntegerProperty(MRN);
+    public Patient(String MRN, String name, String homeAddress, String contactNumber, String gender, String companyName, String date, String occupation) {
+        this.MRN = new SimpleStringProperty(MRN);
         this.name = new SimpleStringProperty(name);
         this.homeAddress = new SimpleStringProperty(homeAddress);
         this.contactNumber = new SimpleStringProperty(contactNumber);
@@ -32,11 +32,11 @@ public class Patient {
         this.date.set(date);
     }
 
-    public int getMRN() {
+    public String getMRN() {
         return MRN.get();
     }
 
-    public void setMRN(int MRN) {
+    public void setMRN(String MRN) {
         this.MRN.set(MRN);
     }
 

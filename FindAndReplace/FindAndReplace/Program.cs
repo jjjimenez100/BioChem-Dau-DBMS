@@ -10,6 +10,8 @@ namespace FindAndReplace
         static StreamReader PersonalInfo;
         static StreamReader template;
         static StreamReader gend;
+        static StreamReader MRN;
+        static StreamReader dates;
         static string templateDirectory = "templates/";
         static string outputDirectory = "../../../../files/";
         static void Main(string[] args)
@@ -28,6 +30,8 @@ namespace FindAndReplace
             //    // Save document on Dispose.
             //}
             mainConfig = new StreamReader("config/packages.biochem");
+            MRN = new StreamReader("config/MRNNo.biochem");
+            dates = new StreamReader("config/Dates.biochem");
             string line;
             bool corporate, sanitary, individual;
             corporate = sanitary = individual = false;
@@ -37,7 +41,7 @@ namespace FindAndReplace
             string companyDirectory = outputDirectory + companyName;
             Directory.CreateDirectory(companyDirectory);
 
-            string personDirectory = companyDirectory + "/" + name + "/";
+            string personDirectory = companyDirectory + "/" + MRN.ReadLine() + " " + name + "/";
             outputDirectory = personDirectory;
             Directory.CreateDirectory(outputDirectory);
             if (mainConfig.ReadLine().Equals("true"))
@@ -238,6 +242,9 @@ namespace FindAndReplace
                     index++;
                 }
                 flatDocument.FindAndReplace("O49", isNull(otherTests));
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -266,6 +273,9 @@ namespace FindAndReplace
                     index++;
                 }
                 flatDocument.FindAndReplace("O45", isNull(otherTests));
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
 
         }
@@ -290,6 +300,9 @@ namespace FindAndReplace
                 }
                 flatDocument.FindAndReplace("C1", "");
                 flatDocument.FindAndReplace("C2", isNull(RadioGraphic.ReadLine()));
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -312,6 +325,9 @@ namespace FindAndReplace
                     }
                     index++;
                 }
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -399,6 +415,9 @@ namespace FindAndReplace
                     }
                     index++;
                 }
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -414,10 +433,18 @@ namespace FindAndReplace
                    flatDocument.FindAndReplace("P" + index.ToString(), PersonalInfo.ReadLine());
                 }
 
-                for(int index=1; index<=11; index++)
+                for(int index=1; index<=9; index++)
                 {
                     flatDocument.FindAndReplace("BC" + index.ToString(), isNull(BloodChem.ReadLine()));
                 }
+                flatDocument.FindAndReplace("BCSGO" + 10.ToString(), isNull(BloodChem.ReadLine()));
+                for (int index = 11; index <= 19; index++)
+                {
+                    flatDocument.FindAndReplace("BCS" + index.ToString(), isNull(BloodChem.ReadLine()));
+                }
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -437,6 +464,9 @@ namespace FindAndReplace
                 {
                     flatDocument.FindAndReplace("F" + index.ToString(), isNull(FA.ReadLine()));
                 }
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -456,6 +486,9 @@ namespace FindAndReplace
                 {
                     flatDocument.FindAndReplace("U" + index.ToString(), isNull(UA.ReadLine()));
                 }
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
@@ -473,6 +506,9 @@ namespace FindAndReplace
 
                 flatDocument.FindAndReplace("MISC1", isNull(MISC.ReadLine()));
                 flatDocument.FindAndReplace("MISC2", isNull(MISC.ReadLine()));
+                flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
+                flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));
             }
         }
 
