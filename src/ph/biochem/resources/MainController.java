@@ -78,7 +78,7 @@ public class MainController extends AlertDialog{
     private Label lblMedical, lblLaboratory, lblRadioGraphic, lblCompanyName;
 
     @FXML
-    private Button btnClinicalMeasurements, btnFamilyHealthHistory, btnResults, btnPrint;
+    private Button btnClinicalMeasurements, btnFamilyHealthHistory, btnResults, btnPrint, btnOpenFolder;
 
     @FXML
     private JFXRadioButton radioPackages, radioIndividualTests, radioCorporate, radioSanitary;
@@ -116,6 +116,11 @@ public class MainController extends AlertDialog{
 
     @FXML
     public void initialize(){
+        if(!DataHolder.isAdmin){
+            btnAddPatient.setDisable(true);
+            btnEditPatient.setDisable(true);
+            btnDeletePatient.setDisable(true);
+        }
         DBHelper.connectToDatabase();
         initTableView();
         initComboBoxes();
@@ -212,6 +217,30 @@ public class MainController extends AlertDialog{
 
         tblPatients.getColumns().addAll(colMRN, colName, colAddress, colContactNumber, colGender, colCompanyName, colDate, colOccupation);
         tblPatients.setItems(sortedPatients);
+    }
+
+    public void onClickBtnOpenFolder(){
+        Patient selectedPatient = tblPatients.getSelectionModel().getSelectedItem();
+        if(selectedPatient != null){
+            try{
+                Desktop.getDesktop().open(new File("files/" +
+                        selectedPatient.getCompanyName() + "/"
+                        + selectedPatient.getMRN() + " "
+                        + selectedPatient.getName()));
+            }
+            catch(Exception e){
+                e.printStackTrace();
+                showSuccess("Oops!", "Directory does not exist. Please re-check the directory name or" +
+                        " update the patient's lab results first.");
+            }
+        }
+        else{
+            showSuccess("Oops!", "Select a patient from the table first.");
+        }
+    }
+
+    private String replaceWhiteSpaces(String str){
+        return str.replaceAll(" ", "%20");
     }
 
     public void initComboBoxes(){
@@ -632,7 +661,7 @@ public class MainController extends AlertDialog{
         radioCorporate.setDisable(false);
         radioSanitary.setDisable(false);
         inputOtherTests.setDisable(false);
-        disableRadioGraphic(true);
+        //disableRadioGraphic(true);
     }
 
     public void individualTestsOnChange(){
@@ -640,7 +669,7 @@ public class MainController extends AlertDialog{
         radioCorporate.setDisable(true);
         radioSanitary.setDisable(true);
         inputOtherTests.setDisable(true);
-        disableRadioGraphic(true);
+        //disableRadioGraphic(true);
         corporate = sanitary = false;
         individual = true;
     }
@@ -653,7 +682,7 @@ public class MainController extends AlertDialog{
         corporate = true;
         sanitary = false;
         individual = false;
-        disableRadioGraphic(false);
+        //disableRadioGraphic(false);
         btnAddPatientSave.setDisable(false);
     }
 
@@ -666,7 +695,7 @@ public class MainController extends AlertDialog{
         corporate = false;
         sanitary = true;
         individual = false;
-        disableRadioGraphic(false);
+        //disableRadioGraphic(false);
         btnAddPatientSave.setDisable(false);
     }
 
@@ -676,7 +705,8 @@ public class MainController extends AlertDialog{
             if(testChoice.equals("Radiographic")){
                 radioGraphic = true;
                 CBC = UA = FA = bloodChemistry = MISC = false;
-                disableRadioGraphic(false);
+                showSuccess("Notice", "Click save button and manually edit the word file if patient conditions are not normal.");
+                //disableRadioGraphic(false);
             }
             else if(testChoice.equals("CBC")){
                 CBC = true;
@@ -754,7 +784,6 @@ public class MainController extends AlertDialog{
         else{
             showSuccess("Oops!", "Select a patient from the table first.");
         }
-
     }
 
     public void onClickBtnPrint() throws IOException{

@@ -15,14 +15,7 @@ import java.util.Date;
 
 public class test {
     public static void main(String[] args) throws Exception{
-        //2018-01-03
-        DateFormat fromFormat = new SimpleDateFormat("yyyy-MM-dd");
-        fromFormat.setLenient(false);
-        DateFormat toFormat = new SimpleDateFormat("M/d/yyyy");
-        toFormat.setLenient(false);
-        String dateStr = "2011-07-09";
-        toFormat.format(fromFormat.parse(dateStr));
-        Date date = fromFormat.parse(dateStr);
-        System.out.println(toFormat.format(date));
+        System.out.println(test.class.getProtectionDomain()
+                .getCodeSource().getLocation().getPath());
     }
 }

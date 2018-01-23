@@ -22,10 +22,10 @@
         <JFXTextField fx:id="inputTriglycerides" layoutX="393.0" layoutY="95.0" prefHeight="25.0" prefWidth="157.0" promptText="Triglycerides (Conventional)" />
         <JFXTextField fx:id="inputHDL" layoutX="393.0" layoutY="140.0" promptText="HDL (Conventional)" />
         <JFXTextField fx:id="inputLDL" layoutX="393.0" layoutY="177.0" promptText="LDL (Conventional)" />
-        <JFXTextField fx:id="inputSGPT" layoutX="180.0" layoutY="241.0" promptText="SGPT" />
-        <JFXTextField fx:id="inputSGOT" layoutX="180.0" layoutY="290.0" promptText="SGOT" />
-        <TextArea fx:id="inputBloodChemistryRemarks" layoutX="357.0" layoutY="241.0" prefHeight="87.0" prefWidth="190.0" promptText="Remarks" />
-        <Button fx:id="btnSave" layoutX="608.0" layoutY="266.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Save">
+        <JFXTextField fx:id="inputSGPT" layoutX="153.0" layoutY="241.0" promptText="SGPT" />
+        <JFXTextField fx:id="inputSGOT" layoutX="153.0" layoutY="290.0" promptText="SGOT" />
+        <TextArea fx:id="inputBloodChemistryRemarks" layoutX="315.0" layoutY="236.0" prefHeight="87.0" prefWidth="190.0" promptText="Remarks" />
+        <Button fx:id="btnSave" layoutX="550.0" layoutY="285.0" mnemonicParsing="false" onAction="#onClickBtnSave" prefHeight="36.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Save">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -37,6 +37,21 @@
       <JFXTextField fx:id="inputTotalCholesterolSI" layoutX="581.0" layoutY="59.0" prefHeight="25.0" prefWidth="174.0" promptText="Total Cholesterol (SI)" />
       <JFXTextField fx:id="inputTriglyceridesSI" layoutX="581.0" layoutY="95.0" prefHeight="25.0" prefWidth="174.0" promptText="Triglycerides (SI)" />
       <JFXTextField fx:id="inputHDLSI" layoutX="580.0" layoutY="140.0" prefHeight="25.0" prefWidth="174.0" promptText="HDL (SI)" />
-      <JFXTextField fx:id="inputLDLSI" layoutX="580.0" layoutY="175.0" prefHeight="25.0" prefWidth="174.0" promptText="LDL (SI)" />
+      <JFXTextField fx:id="inputLDLSI" layoutX="580.0" layoutY="175.0" prefHeight="25.0" prefWidth="174.0" promptText="LDL (SI) (No Auto Compute)" />
+      <Button fx:id="btnCompute" layoutX="651.0" layoutY="285.0" mnemonicParsing="false" onAction="#onClickBtnCompute" prefHeight="36.0" prefWidth="74.0" style="-fx-color: #30aedf;" text="Compute">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="528.0" layoutY="232.0" text="SI Values can be automatically computed">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="530.0" layoutY="258.0" text="or manually inputted by user.">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

@@ -15,10 +15,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/MainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../resources/Login.fxml"));
         //primaryStage.initStyle(StageStyle.UNIFIED);
         primaryStage.setTitle("BioChem Healthcare Services");
-        primaryStage.setScene(new Scene(root, 1209, 617));
+        primaryStage.setScene(new Scene(root, 329, 291));
         primaryStage.show();
     }
 }

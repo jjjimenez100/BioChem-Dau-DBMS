@@ -9,6 +9,8 @@ import ph.biochem.modules.DBHelper;
 import ph.biochem.modules.DataHolder;
 import ph.biochem.modules.StatementType;
 
+import java.text.DecimalFormat;
+
 public class BloodChemistryController {
     public String fasting, bloodUrea, creatinine, bloodUric, totalCholesterol, triglycerides, HDL, LDL, SGPT, SGOT, bloodChemistryRemarks;
 
@@ -27,11 +29,36 @@ public class BloodChemistryController {
     private TextArea inputBloodChemistryRemarks;
 
     @FXML
-    private Button btnSave, btnClose;
+    private Button btnSave, btnClose, btnCompute;
 
     @FXML
     public void initialize(){
         setValues();
+    }
+
+    public void onClickBtnCompute(){
+        DecimalFormat f = new DecimalFormat("##.00000");
+        if(!inputFasting.getText().isEmpty()){
+            inputFastingSI.setText(f.format(isNull(inputFasting.getText())*0.05551));
+        }
+        if(!inputTotalCholesterol.getText().isEmpty()){
+            inputTotalCholesterolSI.setText(f.format(isNull(inputTotalCholesterol.getText())*0.02586d));
+        }
+        if(!inputTriglycerides.getText().isEmpty()){
+            inputTriglyceridesSI.setText(f.format(isNull(inputTriglycerides.getText())*0.01126d));
+        }
+        if(!inputCreatinine.getText().isEmpty()){
+            inputCreatinineSI.setText(f.format(isNull(inputCreatinine.getText())*88.4d) );
+        }
+        if(!inputBloodUrea.getText().isEmpty()){
+            inputBloodUreaSI.setText(f.format(isNull(inputBloodUrea.getText())*0.1665d));
+        }
+        if(!inputBloodUric.getText().isEmpty()){
+            inputBloodUricSI.setText(f.format(isNull(inputBloodUric.getText())*0.05948d));
+        }
+        if(!inputHDL.getText().isEmpty()){
+            inputHDLSI.setText(f.format(isNull(inputHDL.getText())*0.0259d));
+        }
     }
 
     private void setValues(){
@@ -104,5 +131,14 @@ public class BloodChemistryController {
         resetValues();
         Stage bloodChemistryForm = (Stage) btnSave.getScene().getWindow();
         bloodChemistryForm.close();
+    }
+
+    public double isNull(String str){
+        if(str == null){
+            return 0;
+        }
+        else{
+            return Double.parseDouble(str);
+        }
     }
 }

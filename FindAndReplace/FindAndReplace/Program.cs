@@ -291,15 +291,6 @@ namespace FindAndReplace
                 {
                         flatDocument.FindAndReplace("P" + index.ToString(), PersonalInfo.ReadLine());
                 }
-                RadioGraphic.ReadLine(); //start
-                string holder = isNull(RadioGraphic.ReadLine());
-                while (!holder.Equals("END"))
-                {
-                    flatDocument.FindAndReplace("C1", holder + "\nC1");
-                    holder = isNull(RadioGraphic.ReadLine());
-                }
-                flatDocument.FindAndReplace("C1", "");
-                flatDocument.FindAndReplace("C2", isNull(RadioGraphic.ReadLine()));
                 flatDocument.FindAndReplace("DATE1", isNull(dates.ReadLine()));
                 flatDocument.FindAndReplace("DATE2", isNull(dates.ReadLine()));
                 flatDocument.FindAndReplace("DATE3", isNull(dates.ReadLine()));

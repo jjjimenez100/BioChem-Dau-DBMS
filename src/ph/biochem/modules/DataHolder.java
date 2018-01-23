@@ -33,4 +33,6 @@ public class DataHolder {
     public static ConfigManagement config;
 
     public static String dateRequest="", datePerformed="", dateReleased="";
+
+    public static boolean isAdmin = false;
 }
